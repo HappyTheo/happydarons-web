@@ -9,13 +9,13 @@ export function TrustedBy() {
 					Ils nous font confiance
 				</h2>
 
-				<div className="flex flex-wrap items-center justify-center gap-6 lg:gap-12">
+				<div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
 					{[imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2].map((logo, index) => (
-						<div key={index} className="opacity-70 hover:opacity-100 transition-opacity">
+						<div key={index} className="opacity-70 hover:opacity-100 transition-opacity p-2 flex items-center justify-center">
 							<img
 								src={logo}
 								alt={`Partner ${index + 1}`}
-								className="h-10 lg:h-14 w-auto object-contain"
+								className="h-8 lg:h-12 w-auto max-w-[120px] lg:max-w-[180px] object-contain"
 							/>
 						</div>
 					))}
