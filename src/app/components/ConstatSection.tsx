@@ -24,12 +24,12 @@ export function ConstatSection() {
 				{/* Bento Grid */}
 				<div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
 					{/* Card 1 - 82% - Tall */}
-					<div className="col-span-1 row-span-2 bg-[#267b56] rounded-2xl p-4 lg:p-6 text-white border-2 border-[#1a5a3e] shadow-[4px_4px_0px_0px_rgba(26,90,62,1)] lg:shadow-[6px_6px_0px_0px_rgba(26,90,62,1)] active:shadow-[2px_2px_0px_0px_rgba(26,90,62,1)] active:translate-x-[2px] active:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(26,90,62,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-pointer">
-						<p className="text-3xl lg:text-5xl font-bold mb-2 lg:mb-3">82 %</p>
-						<p className="text-xs lg:text-base leading-snug mb-3 lg:mb-4">
+					<div className="col-span-1 row-span-2 bg-[#f5eafa] rounded-2xl p-4 lg:p-6 text-white border-2 border-[#8965a7] shadow-[4px_4px_0px_0px_rgba(137,101,167,1)] lg:shadow-[6px_6px_0px_0px_rgba(137,101,167,1)] active:shadow-[2px_2px_0px_0px_rgba(137,101,167,1)] active:translate-x-[2px] active:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(137,101,167,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-pointer">
+						<p className="text-3xl lg:text-5xl font-bold mb-2 lg:mb-3 text-[#8965a7]">82 %</p>
+						<p className="text-lg lg:text-xl font-semibold leading-snug mb-3 lg:mb-4 text-[#203b31]">
 							des salariés parents sont prêts à changer d'entreprise pour bénéficier de plus de services parentalité.
 						</p>
-						<p className="text-[8px] lg:text-xs opacity-70 mt-auto">
+						<p className="text-sm lg:text-base opacity-70 mt-auto text-[#203b31]">
 							Source : Étude Les Parents Zens (2024), citée par Décideurs RH
 						</p>
 					</div>
