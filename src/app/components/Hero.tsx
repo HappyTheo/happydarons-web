@@ -69,7 +69,7 @@ function StatCard({ icon, value, label, highlight }: { icon: string; value: stri
 
 export function Hero() {
 	return (
-		<section className="relative min-h-screen overflow-hidden pt-20 lg:pt-24" style={{ background: 'radial-gradient(circle at center, #357F5D 0%, #203B31 100%)' }}>
+		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at center, #357F5D 0%, #203B31 100%)' }}>
 			{/* Content */}
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 lg:pt-16">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
@@ -84,7 +84,7 @@ export function Hero() {
 					La solution qui soutient le quotidien des parents et simplifie la vie des RH.
 				</p>
 
-				<button className="bg-[#ffa6bf] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-[#ff8faa] transition-colors text-base lg:text-lg font-medium mb-8 lg:mb-12">
+				<button className="w-full sm:w-auto bg-[#ffa6bf] text-white px-8 py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all text-lg font-medium mb-8 lg:mb-12">
 					Découvrir nos solutions
 				</button>
 			</div>
