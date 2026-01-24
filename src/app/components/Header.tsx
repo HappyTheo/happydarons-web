@@ -24,8 +24,8 @@ export function Header() {
 				fixed z-50 transition-[top,left,right,background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-in-out
 				${isScrolled || mobileMenuOpen
 					? `top-6 left-[2%] right-[2%] md:left-[5%] md:right-[5%] lg:left-[10%] lg:right-[10%] xl:left-[15%] xl:right-[15%] 
-						${mobileMenuOpen ? 'bg-[#1f3c32] rounded-3xl' : 'bg-[#1f3c32]/60 rounded-full'} 
-						backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(31,60,50,0.37)] border border-white/20`
+						${mobileMenuOpen ? 'bg-[#1f3c32] rounded-3xl' : 'bg-[#1f3c32]/30 rounded-full'} 
+						backdrop-blur-[50px] backdrop-saturate-150 shadow-[0_8px_32px_0_rgba(31,60,50,0.37)] border border-white/10 ring-1 ring-white/5`
 					: 'top-0 left-0 right-0 bg-transparent backdrop-blur-none shadow-none'
 				}
 			`}
@@ -45,7 +45,7 @@ export function Header() {
 							alt="HappyDarons"
 							className={`
 								w-auto transition-all duration-500 ease-out
-								${isScrolled ? 'h-14 lg:h-20' : 'h-24 lg:h-40'}
+								${isScrolled ? 'h-20 lg:h-20' : 'h-32 lg:h-40'}
 							`}
 						/>
 					</div>
