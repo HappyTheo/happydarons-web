@@ -1,3 +1,4 @@
+import confetti from "canvas-confetti";
 import imgHero from "@/assets/1dbc17ebcbcc9a9e6bd2200ca3c80b6af952eb95.webp";
 import imgHeroBg from "@/assets/40b3b75ab6b28adeae2dec5506df869ea93e0f8d.webp";
 import imgLogo1 from "@/assets/dfeeb57e51fd516a0374fc221864e4890eb4d8f0.webp";
@@ -46,8 +47,22 @@ const logos = [imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLo
 
 function StatCard({ icon, value, label, highlight }: { icon: string; value: string; label: string; highlight: string }) {
 	const parts = label.split(highlight);
+
+	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		const x = (rect.left + rect.width / 2) / window.innerWidth;
+		const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+		confetti({
+			origin: { x, y },
+			particleCount: 100,
+			spread: 70,
+			zIndex: 100,
+		});
+	};
+
 	return (
-		<div className="bg-white rounded-2xl p-3 lg:p-4 shadow-lg border border-gray-100 max-w-[160px] lg:max-w-[200px]">
+		<div onClick={handleClick} className="select-none cursor-pointer bg-white rounded-lg p-3 lg:p-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all max-w-[160px] lg:max-w-[200px]">
 			<div className="flex items-start gap-2 lg:gap-3">
 				<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
 					{icon}
@@ -69,7 +84,7 @@ function StatCard({ icon, value, label, highlight }: { icon: string; value: stri
 
 export function Hero() {
 	return (
-		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at center, #357F5D 0%, #203B31 100%)' }}>
+		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at bottom right, #203B31 64%, #357F5D 99%)' }}>
 			{/* Content */}
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 lg:pt-16">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
@@ -84,32 +99,36 @@ export function Hero() {
 					La solution qui soutient le quotidien des parents et simplifie la vie des RH.
 				</p>
 
-				<button className="w-full sm:w-auto bg-[#ffa6bf] text-white px-8 py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all text-lg font-medium mb-8 lg:mb-12">
+				<button className="w-auto bg-[#ffa6bf] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base sm:text-lg font-medium mb-8 lg:mb-12">
 					Découvrir nos solutions
 				</button>
 			</div>
 
 			{/* Hero image with stat cards */}
+			{/* Hero image with stat cards */}
 			<div className="relative max-w-6xl mx-auto px-4 pb-8 lg:pb-16 min-h-[400px]">
-				{/* Background photo - Truly in the background */}
-				<div className="absolute inset-0 z-0 flex items-center justify-center">
-					<div className="relative w-[90%] lg:w-[80%] h-[110%] -top-[5%] rounded-[30px] lg:rounded-[60px] overflow-hidden border-2 lg:border-4 border-[#7ab8a0]/30 shadow-2xl">
-						<img
-							src={imgHeroBg}
-							alt=""
-							className="w-full h-full object-cover blur-[5px] scale-110 opacity-40 lg:opacity-60"
-						/>
-						<div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#203b31]/80" />
+				{/* Image and Background Wrapper for Alignment */}
+				<div className="relative flex justify-center items-end">
+					{/* Background photo - Truly in the background */}
+					<div className="absolute inset-0 z-0 flex items-end justify-center">
+						<div className="relative w-full h-[85%] rounded-[100px] lg:rounded-[200px] overflow-hidden border-2 lg:border-4 border-[#7ab8a0]/30 shadow-2xl blur-[2px] lg:blur-[6px]">
+							<img
+								src={imgHeroBg}
+								alt=""
+								className="w-full h-full object-cover scale-110 opacity-40 lg:opacity-60"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#203b31]/80" />
+						</div>
 					</div>
-				</div>
 
-				{/* Central hero image */}
-				<div className="relative z-10 flex justify-center">
-					<img
-						src={imgHero}
-						alt="Parent avec enfant"
-						className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl h-auto object-contain"
-					/>
+					{/* Central hero image */}
+					<div className="relative z-10 flex justify-center">
+						<img
+							src={imgHero}
+							alt="Parent avec enfant"
+							className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl h-auto object-contain scale-110 origin-bottom"
+						/>
+					</div>
 				</div>
 
 				{/* Stat cards - Desktop layout */}
@@ -148,7 +167,7 @@ export function Hero() {
 			</div>
 
 			{/* Trusted By Section */}
-			<div className="relative z-10 py-12 lg:py-16">
+			<div className="relative z-10 pb-12 lg:pb-16 lg:-mt-8">
 				<h2 className="text-lg lg:text-xl font-bold text-center mb-8 lg:mb-10 text-white opacity-90">
 					Ils nous font confiance
 				</h2>
