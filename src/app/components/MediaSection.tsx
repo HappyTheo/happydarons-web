@@ -156,8 +156,30 @@ export function MediaSection() {
 	return (
 		<section className="bg-[#fae6e9] py-16 lg:py-24">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Video Player */}
+				{/* Media Mentions */}
 				<div className="mb-16 lg:mb-24">
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-black mb-12 lg:mb-16">
+						Ils parlent de nous
+					</h2>
+
+					<div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
+						{mediaLogos.map((logo, index) => (
+							<div
+								key={index}
+								className="w-20 h-20 lg:w-28 lg:h-28 rounded-2xl overflow-hidden border-2 border-black/10 hover:border-black/30 transition-all hover:scale-105"
+							>
+								<img
+									src={logo}
+									alt={`Media ${index + 1}`}
+									className="w-full h-full object-cover"
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{/* Video Player */}
+				<div>
 					<div className="relative max-w-4xl mx-auto">
 						<div
 							ref={containerRef}
@@ -231,28 +253,6 @@ export function MediaSection() {
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-
-				{/* Media Mentions */}
-				<div>
-					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-black mb-12 lg:mb-16">
-						Ils parlent de nous
-					</h2>
-
-					<div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
-						{mediaLogos.map((logo, index) => (
-							<div
-								key={index}
-								className="w-20 h-20 lg:w-28 lg:h-28 rounded-2xl overflow-hidden border-2 border-black/10 hover:border-black/30 transition-all hover:scale-105"
-							>
-								<img
-									src={logo}
-									alt={`Media ${index + 1}`}
-									className="w-full h-full object-cover"
-								/>
-							</div>
-						))}
 					</div>
 				</div>
 			</div>

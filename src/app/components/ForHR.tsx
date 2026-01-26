@@ -7,11 +7,13 @@ export function ForHR() {
 				<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 					{/* Image - Left */}
 					<div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
-						<div className="relative w-full max-w-md lg:max-w-lg">
+						<div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center">
+							{/* Pink blurred spot behind the image */}
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#FFA6BF] blur-[50px] opacity-[0.54] rounded-full" />
 							<img
 								src={imgHR}
 								alt="Dashboard HappyDarons pour RH"
-								className="w-full h-auto rounded-3xl shadow-2xl"
+								className="relative z-10 w-full h-auto"
 							/>
 						</div>
 					</div>
@@ -31,7 +33,7 @@ export function ForHR() {
 							Formez vos managers, sensibilisez vos équipes et pilotez en temps réel le bien-être parental pour mieux comprendre les besoins et mesurer l'impact de vos actions.
 						</p>
 
-						<button className="bg-transparent text-[#ffa6bf] px-6 py-3 rounded-full border-2 border-[#ffa6bf] hover:bg-[#ffa6bf] hover:text-white transition-colors text-base font-medium">
+						<button className="bg-[#ffa6bf] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium">
 							Découvrir nos solutions
 						</button>
 					</div>

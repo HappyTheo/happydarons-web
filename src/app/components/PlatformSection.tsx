@@ -1,21 +1,7 @@
 export function PlatformSection() {
 	return (
 		<section className="relative bg-gradient-to-b from-[#fae6e9] via-[#fff5f7] to-[#fae6e9] py-16 lg:py-24 overflow-hidden">
-			{/* Decorative leaves */}
-			<div className="absolute top-0 left-0 w-32 h-32 lg:w-48 lg:h-48 opacity-30 pointer-events-none">
-				<svg viewBox="0 0 100 100" className="w-full h-full text-[rgba(38,123,86,1)]">
-					<ellipse cx="20" cy="50" rx="8" ry="25" fill="currentColor" transform="rotate(-30 20 50)" />
-					<ellipse cx="35" cy="45" rx="6" ry="20" fill="currentColor" transform="rotate(-15 35 45)" />
-					<ellipse cx="50" cy="40" rx="5" ry="15" fill="currentColor" transform="rotate(0 50 40)" />
-				</svg>
-			</div>
-			<div className="absolute top-0 right-0 w-32 h-32 lg:w-48 lg:h-48 opacity-30 pointer-events-none transform scale-x-[-1]">
-				<svg viewBox="0 0 100 100" className="w-full h-full text-[rgba(38,123,86,1)]">
-					<ellipse cx="20" cy="50" rx="8" ry="25" fill="currentColor" transform="rotate(-30 20 50)" />
-					<ellipse cx="35" cy="45" rx="6" ry="20" fill="currentColor" transform="rotate(-15 35 45)" />
-					<ellipse cx="50" cy="40" rx="5" ry="15" fill="currentColor" transform="rotate(0 50 40)" />
-				</svg>
-			</div>
+
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 				<div className="text-center mb-12 lg:mb-16">

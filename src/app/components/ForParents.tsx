@@ -3,14 +3,7 @@ import imgParents from "@/assets/89f67d87f20fb0ca0f1bb876745537a1c6f2ed29.webp";
 export function ForParents() {
 	return (
 		<section className="relative bg-gradient-to-b from-[#fae6e9] to-[#fff5f7] py-16 lg:py-24 overflow-hidden">
-			{/* Decorative leaf left */}
-			<div className="absolute top-1/4 left-0 w-16 h-32 lg:w-24 lg:h-48 opacity-30 pointer-events-none">
-				<svg viewBox="0 0 50 100" className="w-full h-full text-[#267b56]">
-					<ellipse cx="15" cy="30" rx="6" ry="20" fill="currentColor" transform="rotate(-20 15 30)" />
-					<ellipse cx="20" cy="55" rx="5" ry="18" fill="currentColor" transform="rotate(-10 20 55)" />
-					<ellipse cx="18" cy="80" rx="4" ry="15" fill="currentColor" transform="rotate(5 18 80)" />
-				</svg>
-			</div>
+
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -29,18 +22,20 @@ export function ForParents() {
 							Du projet bébé (parcours PMA, adoption) à l'adolescence : contenus, services, assistant familial et soutien émotionnel.
 						</p>
 
-						<button className="bg-[#267b56] text-white px-6 py-3 rounded-full border border-[#203b31] hover:bg-[#1e6045] transition-colors text-base font-medium shadow-md">
+						<button className="bg-[#267b56] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium">
 							Découvrir nos solutions
 						</button>
 					</div>
 
 					{/* Image - Right */}
 					<div className="relative flex justify-center lg:justify-end">
-						<div className="relative w-full max-w-md lg:max-w-lg">
+						<div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center">
+							{/* Green blurred spot behind the image */}
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square lg:w-[90%] lg:h-[90%] lg:aspect-auto bg-[#267B56] blur-[50px] opacity-60 rounded-full" />
 							<img
 								src={imgParents}
 								alt="Application mobile HappyDarons"
-								className="w-full h-auto rounded-3xl shadow-2xl"
+								className="relative z-10 w-full h-auto"
 							/>
 						</div>
 					</div>
