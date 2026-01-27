@@ -63,13 +63,13 @@ function StatCard({ icon, value, label, highlight }: { icon: string; value: stri
 
 	return (
 		<div onClick={handleClick} className="select-none cursor-pointer bg-white rounded-lg p-3 lg:p-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all max-w-[160px] lg:max-w-[200px]">
-			<div className="flex items-start gap-2 lg:gap-3">
+			<div className="flex flex-col items-center gap-2 lg:gap-3 text-center">
 				<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
 					{icon}
 				</div>
-				<div className="flex-1 min-w-0">
+				<div className="flex-1 min-w-0 w-full">
 					{value && (
-						<p className="text-base lg:text-xl font-bold text-[#203b31]">{value}</p>
+						<p className="text-base lg:text-xl font-bold text-[#203b31] mb-1">{value}</p>
 					)}
 					<p className="text-[10px] lg:text-sm text-gray-600 leading-tight">
 						{parts[0]}
