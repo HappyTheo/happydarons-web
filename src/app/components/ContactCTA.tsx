@@ -1,4 +1,16 @@
+import { useState, useEffect } from "react";
+import { PopupModal } from "react-calendly";
+
 export function ContactCTA() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // Wait for the component to be mounted before setting the root element
+    // ensuring we are on client side and 'root' exists
+    setRootElement(document.getElementById("root"));
+  }, []);
+
   return (
     <section className="bg-[#fae6e9] py-16 lg:py-24 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,9 +37,21 @@ export function ContactCTA() {
               <p>✨ mise en place rapide et sans friction</p>
             </div>
 
-            <button className="w-full sm:w-auto bg-[#ffa6bf] text-white px-8 py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-lg font-medium">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="w-full sm:w-auto bg-[#ffa6bf] text-white px-8 py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-lg font-medium"
+            >
               Réserve une démo !
             </button>
+
+            {rootElement && (
+              <PopupModal
+                url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+                onModalClose={() => setIsOpen(false)}
+                open={isOpen}
+                rootElement={rootElement}
+              />
+            )}
           </div>
         </div>
       </div>
