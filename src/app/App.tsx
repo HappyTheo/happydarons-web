@@ -10,6 +10,7 @@ import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { ContactCTA } from './components/ContactCTA';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
 	return (
@@ -28,6 +29,7 @@ export default function App() {
 				<ContactCTA />
 			</main>
 			<Footer />
+			<ScrollToTop />
 		</div>
 	);
 }
