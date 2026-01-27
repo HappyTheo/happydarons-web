@@ -1,6 +1,6 @@
 export function PlatformSection() {
 	return (
-		<section className="relative bg-gradient-to-b from-[#fae6e9] via-[#fff5f7] to-[#fae6e9] py-16 lg:py-24 overflow-hidden">
+		<section className="relative bg-gradient-to-b from-[#fae6e9] via-[#fff5f7] to-[#fae6e9] pt-16 pb-16 lg:pt-24 lg:pb-0 overflow-hidden">
 
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

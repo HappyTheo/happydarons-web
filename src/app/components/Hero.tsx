@@ -106,7 +106,7 @@ export function Hero() {
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
 					Faites de la{' '}
 					<span className="text-[#ffa6bf]">parentalité</span>
-					{' '}un levier
+					{' '}un levier{' '}
 					<br className="hidden sm:block" />
 					d'engagement !
 				</h1>
