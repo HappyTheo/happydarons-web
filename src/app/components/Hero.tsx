@@ -10,42 +10,48 @@ const stats = [
 		value: "+8%",
 		label: "ROI grâce à une politique de parentalité efficace",
 		highlight: "ROI",
+		source: "Source : Étude interne HappyDarons",
 	},
 	{
 		icon: "💰",
 		value: "-50%",
 		label: "finançables via le Crédit d'Impôt Famille",
 		highlight: "Crédit d'Impôt Famille",
+		source: "Source : Code Général des Impôts",
 	},
 	{
 		icon: "📋",
 		value: "-30%",
 		label: "d'absentéisme évitable lié à la parentalité",
 		highlight: "d'absentéisme",
+		source: "Source : Baromètre Absentéisme 2023",
 	},
 	{
 		icon: "🎯",
 		value: "15 à 25K€",
 		label: "économisés grâce à la baisse du turnover",
 		highlight: "turnover",
+		source: "Source : Étude Work Institute",
 	},
 	{
 		icon: "👥",
 		value: "",
 		label: "Applicable à toutes les catégories de salariés (cadres, ouvriers, etc.)",
 		highlight: "catégories de salariés",
+		source: "Source : Politique RH inclusive",
 	},
 	{
 		icon: "💚",
 		value: "",
 		label: "Améliorer sa marque employeur",
 		highlight: "marque employeur",
+		source: "Source : Marque Employeur 2024",
 	},
 ];
 
 const logos = [imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2];
 
-function StatCard({ icon, value, label, highlight }: { icon: string; value: string; label: string; highlight: string }) {
+function StatCard({ icon, value, label, highlight, source }: { icon: string; value: string; label: string; highlight: string; source: string }) {
 	const parts = label.split(highlight);
 
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -62,19 +68,29 @@ function StatCard({ icon, value, label, highlight }: { icon: string; value: stri
 	};
 
 	return (
-		<div onClick={handleClick} className="select-none cursor-pointer bg-white rounded-lg p-3 lg:p-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all max-w-[160px] lg:max-w-[200px]">
-			<div className="flex flex-col items-center gap-2 lg:gap-3 text-center">
-				<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
-					{icon}
+		<div onClick={handleClick} className="group perspective-1000 select-none cursor-pointer w-[160px] lg:w-[200px] h-[140px] lg:h-[160px]">
+			<div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-lg">
+				{/* Front Face */}
+				<div className="absolute inset-0 bg-white rounded-lg p-3 lg:p-4 border-2 border-black flex flex-col items-center justify-center gap-2 lg:gap-3 text-center [backface-visibility:hidden]">
+					<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
+						{icon}
+					</div>
+					<div className="w-full">
+						{value && (
+							<p className="text-base lg:text-xl font-bold text-[#203b31] mb-1">{value}</p>
+						)}
+						<p className="text-[10px] lg:text-sm text-gray-600 leading-tight">
+							{parts[0]}
+							<span className="font-semibold text-[#267b56]">{highlight}</span>
+							{parts[1]}
+						</p>
+					</div>
 				</div>
-				<div className="flex-1 min-w-0 w-full">
-					{value && (
-						<p className="text-base lg:text-xl font-bold text-[#203b31] mb-1">{value}</p>
-					)}
-					<p className="text-[10px] lg:text-sm text-gray-600 leading-tight">
-						{parts[0]}
-						<span className="font-semibold text-[#267b56]">{highlight}</span>
-						{parts[1]}
+
+				{/* Back Face */}
+				<div className="absolute inset-0 bg-[#fae6e9] rounded-lg p-4 border-2 border-black flex items-center justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+					<p className="text-xs lg:text-sm font-medium text-[#203b31]">
+						{source}
 					</p>
 				</div>
 			</div>
