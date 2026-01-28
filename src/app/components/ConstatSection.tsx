@@ -68,8 +68,8 @@ export function ConstatSection() {
 						</div>
 
 						{/* Card 5 - 44% */}
-						<div className="flex-1 bg-[#267b56] rounded-2xl p-3 lg:p-5 text-white border-2 border-[#1a5a3e] shadow-[3px_3px_0px_0px_rgba(26,90,62,1)] lg:shadow-[5px_5px_0px_0px_rgba(26,90,62,1)] active:shadow-[1px_1px_0px_0px_rgba(26,90,62,1)] active:translate-x-[2px] active:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(26,90,62,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-pointer">
-							<p className="text-2xl lg:text-4xl font-bold mb-1 lg:mb-2">44 %</p>
+						<div className="flex-1 bg-[#D2F3FF] rounded-2xl p-3 lg:p-5 text-[#203b31] border-2 border-[#87b6c7] shadow-[3px_3px_0px_0px_rgba(135,182,199,1)] lg:shadow-[5px_5px_0px_0px_rgba(135,182,199,1)] active:shadow-[1px_1px_0px_0px_rgba(135,182,199,1)] active:translate-x-[2px] active:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(135,182,199,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-pointer">
+							<p className="text-2xl lg:text-4xl font-bold mb-1 lg:mb-2 text-[#006080]">44 %</p>
 							<p className="text-[10px] lg:text-sm leading-snug mb-1 lg:mb-2">
 								des femmes refusent des postes à responsabilité pour des raisons familiales.
 							</p>
