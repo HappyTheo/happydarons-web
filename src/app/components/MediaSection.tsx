@@ -212,23 +212,35 @@ export function MediaSection() {
 									allowFullScreen
 								/>
 
-								{isMuted && isPlaying && (
+								{/* Main Click Handler (Mute/Unmute) */}
+								{/* Main Click Handler (Mute/Unmute) */}
+								{isPlaying && (
 									<button
 										onClick={toggleMute}
-										className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] transition-all cursor-pointer touch-manipulation"
+										className={`absolute inset-0 z-10 flex items-center justify-center transition-all cursor-pointer touch-manipulation group ${isMuted ? "bg-black/30 backdrop-blur-[2px]" : "bg-transparent"
+											}`}
+										aria-label={isMuted ? "Activer le son" : "Couper le son"}
 									>
-										<div className="flex items-center gap-3 bg-white/95 text-black px-6 py-3 rounded-full shadow-xl animate-pulse">
-											<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-												<path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-											</svg>
-											<span className="font-semibold text-sm">Cliquer pour activer le son</span>
-										</div>
+										{isMuted ? (
+											<div className="flex items-center gap-3 bg-white/95 text-black px-6 py-3 rounded-full shadow-xl animate-pulse">
+												<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+													<path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+												</svg>
+												<span className="font-semibold text-sm">Cliquer pour activer le son</span>
+											</div>
+										) : (
+											<div className="bg-black/40 backdrop-blur-sm p-6 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-90 group-hover:scale-100">
+												<svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+													<path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+												</svg>
+											</div>
+										)}
 									</button>
 								)}
 
 								{/* Minimalist bottom control bar */}
 								<div
-									className={`absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${showControls && !isMuted ? "opacity-100" : "opacity-0"
+									className={`absolute bottom-0 left-0 right-0 px-4 py-3 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 z-20 ${showControls && !isMuted ? "opacity-100" : "opacity-0"
 										}`}
 								>
 									<div className="flex items-center justify-end gap-3">

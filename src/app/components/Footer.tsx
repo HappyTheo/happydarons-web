@@ -34,7 +34,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-sm lg:text-base text-black text-center">
-            Tous droits réservés. @2025 HappyDarons
+            Tous droits réservés. @2026 HappyDarons
           </p>
         </div>
       </div>
