@@ -53,12 +53,12 @@ export function ConstatSection() {
 					<div className="col-span-1 row-span-2 flex flex-col gap-3 lg:gap-6">
 						{/* Card 2 - 70% */}
 						<div className="flex-1 bg-[#267b56] rounded-2xl p-3 lg:p-5 text-white border-2 border-[#1a5a3e] shadow-[3px_3px_0px_0px_rgba(26,90,62,1)] lg:shadow-[5px_5px_0px_0px_rgba(26,90,62,1)] active:shadow-[1px_1px_0px_0px_rgba(26,90,62,1)] active:translate-x-[2px] active:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(26,90,62,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-pointer">
-							<p className="text-2xl lg:text-4xl font-bold mb-1 lg:mb-2">70 %</p>
+							<p className="text-2xl lg:text-4xl font-bold mb-1 lg:mb-2">13 250 €</p>
 							<p className="text-[10px] lg:text-sm leading-snug mb-1 lg:mb-2">
-								de la charge du quotidien repose encore sur les femmes.
+								Coût annuel estimé du désengagement par salarié en France.
 							</p>
 							<p className="text-[7px] lg:text-[10px] opacity-70">
-								Source : INSEE – Enquête sur l'emploi du temps (2020)
+								Source : Mozart Consulting, Groupe AESIO, (2024)
 							</p>
 						</div>
 
