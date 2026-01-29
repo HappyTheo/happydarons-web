@@ -49,7 +49,7 @@ export function Header() {
 
 	const navItems = [
 		{ label: 'Nos Solutions', href: '/nos-solutions', hasDropdown: true },
-		{ label: 'Devenir Partenaire', href: '#devenir-partenaire', hasDropdown: false },
+		{ label: 'Devenir Partenaire', href: '/devenir-partenaire', hasDropdown: false },
 		{ label: 'Notre Équipe', href: '#equipe', hasDropdown: false },
 		{ label: 'FAQ', href: '#faq', hasDropdown: false },
 	];
