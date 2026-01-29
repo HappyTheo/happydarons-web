@@ -59,7 +59,7 @@ export function Header() {
 			icon: Smartphone,
 			title: 'Application salariés parents',
 			description: 'Une app mobile pour accompagner les parents au quotidien',
-			href: '#',
+			href: '/nos-solutions#app-mobile',
 		},
 		{
 			icon: Monitor,

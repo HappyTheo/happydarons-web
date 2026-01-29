@@ -66,7 +66,7 @@ export function SolutionsFeatures() {
     ];
 
     return (
-        <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 bg-white overflow-hidden">
+        <section id="app-mobile" className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 bg-white overflow-hidden scroll-mt-24">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
