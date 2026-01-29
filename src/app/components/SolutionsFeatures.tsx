@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Brain, BookOpen, Users, Briefcase, ChevronDown, Check, Wifi, Battery, Signal, Play, Pause, Heart, Calendar, MessageCircle, Star } from 'lucide-react';
+import { Brain, BookOpen, Users, Briefcase, ChevronDown, Check, Wifi, Battery, Signal, Play, Pause, Heart, Calendar, MessageCircle, Star, BarChart3, FileText, GraduationCap, LayoutDashboard, Settings, Bell, Search, Menu, User, PieChart, TrendingUp, Download, FileCheck, Video } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function SolutionsFeatures() {
@@ -9,6 +9,51 @@ export function SolutionsFeatures() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isBooked, setIsBooked] = useState(false);
     const [likedMessage, setLikedMessage] = useState(false);
+
+    // RH Section State
+    const [rhActiveTab, setRhActiveTab] = useState(0);
+
+    const rhFeatures = [
+        {
+            id: 0,
+            title: "Piloter et mesurer en temps réel",
+            description: "Dashboard unifié et indicateurs clés.",
+            details: [
+                "Suivi des parents (grossesse, post-partum...)",
+                "Reporting automatisé (Comité RH / QVCT)",
+                "Accès à l'historique d'accompagnement"
+            ],
+            benefit: "Visibilité claire, décisions rapides, pilotage stratégique facilité.",
+            icon: BarChart3, // Or layout-dashboard
+            color: "#267B56"
+        },
+        {
+            id: 1,
+            title: "Structurer et déployer votre politique",
+            description: "Kits RH et documents clés en main pour gagner du temps.",
+            details: [
+                "Checklists départs/retours congés",
+                "Modèles d’emails & Guides parentalité",
+                "Gestion des crédits et ateliers"
+            ],
+            benefit: "Gain de temps colossal, conformité juridique, déploiement homogène.",
+            icon: FileText,
+            color: "#FFA6BF"
+        },
+        {
+            id: 2,
+            title: "Former & accompagner vos équipes",
+            description: "Programmes managers et culture d'entreprise.",
+            details: [
+                "Programmes et formations managers",
+                "Interventions experts et ateliers",
+                "Fiches pratiques & situations complexes"
+            ],
+            benefit: "Des managers mieux outillés et une culture d’inclusion renforcée.",
+            icon: GraduationCap,
+            color: "#FFD200"
+        }
+    ];
 
     const features = [
         {
@@ -494,7 +539,355 @@ export function SolutionsFeatures() {
                         </div>
                     </div>
                 </div>
+
+                {/* SEPARATOR */}
+                <div className="w-full h-px bg-gray-200 my-20 lg:my-32"></div>
+
+                {/* RH PLATFORM SECTION */}
+                <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#e0f2fe] text-[#0c4a6e] font-bold text-sm tracking-wide mb-6 uppercase">
+                        PLATEFORME RH
+                    </div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3C32] mb-6 leading-tight">
+                        La plateforme qui structure, pilote et <br className="hidden md:block" />
+                        <span className="relative inline-block">
+                            valorise votre politique.
+                            <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#267B56]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                            </svg>
+                        </span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        Grâce à un tableau de bord clair, des outils clés en main et des données actionnables, vous accompagnez vos collaborateur·rice·s tout au long de leur parentalité.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    {/* Left Column: Dashboard Mockup (Visual) */}
+                    <div className="lg:col-span-7 flex justify-center items-center relative min-h-[600px] lg:order-1 order-2">
+                        {/* Blobs for RH */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#e0f2fe] rounded-full blur-[120px] opacity-[0.4] z-0 pointer-events-none"></div>
+
+                        {/* DASHBOARD MOCKUP CONTAINER */}
+                        <div className="relative z-10 w-full max-w-[680px] bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-200 overflow-hidden flex flex-col aspect-[16/10] hover:scale-[1.01] transition-transform duration-500">
+
+                            {/* Dashboard Header */}
+                            <div className="h-14 border-b border-gray-100 flex items-center justify-between px-6 bg-white shrink-0">
+                                <div className="flex items-center gap-4">
+                                    <div className="flex gap-1.5">
+                                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                                    </div>
+                                    <div className="h-4 w-px bg-gray-200 mx-2"></div>
+                                    <div className="flex items-center gap-2 text-gray-400 bg-gray-50 px-3 py-1.5 rounded-lg text-xs w-64">
+                                        <Search size={14} />
+                                        <span>Rechercher un collaborateur...</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 hover:bg-gray-50 rounded-lg cursor-pointer text-gray-400 relative">
+                                        <Bell size={18} />
+                                        <div className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
+                                    </div>
+                                    <div className="w-8 h-8 rounded-full bg-[#267B56] flex items-center justify-center text-white text-xs font-bold">HR</div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-1 overflow-hidden">
+                                {/* Sidebar */}
+                                <div className="w-16 md:w-64 bg-gray-50 border-r border-gray-100 flex flex-col py-6 shrink-0 transition-all duration-300">
+                                    <div className="px-6 mb-8 hidden md:block">
+                                        <div className="font-bold text-[#1F3C32] text-lg">HappyDarons</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Entreprise</div>
+                                    </div>
+                                    <div className="flex flex-col gap-1 px-3">
+                                        <div className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer ${rhActiveTab === 0 ? 'bg-white text-[#267B56] shadow-sm font-medium' : 'text-gray-500 hover:bg-gray-100'}`} onClick={() => setRhActiveTab(0)}>
+                                            <LayoutDashboard size={20} />
+                                            <span className="hidden md:block text-sm">Tableau de bord</span>
+                                        </div>
+                                        <div className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer ${rhActiveTab === 1 ? 'bg-white text-[#FFA6BF] shadow-sm font-medium' : 'text-gray-500 hover:bg-gray-100'}`} onClick={() => setRhActiveTab(1)}>
+                                            <FileText size={20} />
+                                            <span className="hidden md:block text-sm">Documents RH</span>
+                                        </div>
+                                        <div className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer ${rhActiveTab === 2 ? 'bg-white text-[#FFD200] shadow-sm font-medium' : 'text-gray-500 hover:bg-gray-100'}`} onClick={() => setRhActiveTab(2)}>
+                                            <GraduationCap size={20} />
+                                            <span className="hidden md:block text-sm">Formation</span>
+                                        </div>
+                                        <div className="mt-4 pt-4 border-t border-gray-200 hidden md:block px-3">
+                                            <div className="text-[10px] text-gray-400 uppercase font-bold mb-2">Équipe</div>
+                                            <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                                <Users size={18} />
+                                                <span className="text-sm">Collaborateurs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mt-auto px-3">
+                                        <div className="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-100 rounded-lg cursor-pointer">
+                                            <Settings size={20} />
+                                            <span className="hidden md:block text-sm">Paramètres</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Main Content Canvas */}
+                                <div className="flex-1 bg-white p-6 md:p-8 overflow-y-auto w-full relative">
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={rhActiveTab}
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="h-full"
+                                        >
+                                            {/* TAB 0: PILOTER (Analytics) */}
+                                            {rhActiveTab === 0 && (
+                                                <div className="space-y-6">
+                                                    <div className="flex justify-between items-end">
+                                                        <div>
+                                                            <h3 className="text-2xl font-bold text-gray-900">Vue d'ensemble</h3>
+                                                            <p className="text-sm text-gray-500">Données en temps réel de votre politique parentale</p>
+                                                        </div>
+                                                        <button className="flex items-center gap-2 text-xs font-bold bg-white border border-gray-200 px-3 py-2 rounded-lg hover:bg-gray-50">
+                                                            <Download size={14} /> Exporter
+                                                        </button>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-3 gap-4">
+                                                        <div className="p-4 rounded-xl border border-gray-100 bg-green-50/50">
+                                                            <div className="text-xs text-gray-500 font-bold uppercase mb-1">Futurs Parents</div>
+                                                            <div className="text-3xl font-bold text-[#267B56]">12</div>
+                                                            <div className="text-[10px] text-green-600 flex items-center mt-1"><TrendingUp size={10} className="mr-1" /> +2 ce mois</div>
+                                                        </div>
+                                                        <div className="p-4 rounded-xl border border-gray-100 bg-pink-50/50">
+                                                            <div className="text-xs text-gray-500 font-bold uppercase mb-1">Congés Maternité</div>
+                                                            <div className="text-3xl font-bold text-[#FFA6BF]">8</div>
+                                                            <div className="text-[10px] text-gray-400 mt-1">Actuellement actifs</div>
+                                                        </div>
+                                                        <div className="p-4 rounded-xl border border-gray-100 bg-blue-50/50">
+                                                            <div className="text-xs text-gray-500 font-bold uppercase mb-1">Retours Post-Partum</div>
+                                                            <div className="text-3xl font-bold text-blue-600">5</div>
+                                                            <div className="text-[10px] text-blue-600 flex items-center mt-1">100% Retention</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-3 gap-6 h-48">
+                                                        <div className="col-span-2 rounded-xl border border-gray-100 p-4 flex flex-col">
+                                                            <div className="text-sm font-bold text-gray-700 mb-4">Utilisation des Services</div>
+                                                            <div className="flex-1 flex items-end justify-between gap-2 px-2">
+                                                                {[40, 65, 30, 85, 50, 75, 60].map((h, i) => (
+                                                                    <div key={i} className="w-full bg-gray-100 rounded-t-sm relative group">
+                                                                        <div style={{ height: `${h}%` }} className="absolute bottom-0 w-full bg-[#267B56] rounded-t-sm opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                            <div className="flex justify-between text-[10px] text-gray-400 mt-2 px-1">
+                                                                <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-span-1 rounded-xl border border-gray-100 p-4 flex flex-col items-center justify-center relative">
+                                                            <div className="absolute top-4 left-4 text-sm font-bold text-gray-700">Budget</div>
+                                                            <PieChart className="text-gray-200 w-24 h-24" />
+                                                            <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-gray-400">75%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* TAB 1: STRUCTURER (Documents / Kits) */}
+                                            {rhActiveTab === 1 && (
+                                                <div className="space-y-6">
+                                                    <div className="flex justify-between items-center mb-2">
+                                                        <h3 className="text-2xl font-bold text-gray-900">Kits & Documents</h3>
+                                                        <span className="text-xs bg-[#FFA6BF]/20 text-pink-700 font-bold px-2 py-1 rounded-md">Bibliothèque RH</span>
+                                                    </div>
+
+                                                    <div className="space-y-3">
+                                                        <div className="flex items-center p-4 rounded-xl border border-gray-100 hover:border-pink-200 hover:bg-pink-50/30 transition-colors cursor-pointer group">
+                                                            <div className="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center text-pink-600 mr-4 group-hover:scale-110 transition-transform">
+                                                                <FileCheck size={20} />
+                                                            </div>
+                                                            <div className="flex-1">
+                                                                <div className="text-sm font-bold text-gray-900">Checklist Départ Congé Maternité</div>
+                                                                <div className="text-xs text-gray-500">Mis à jour le 24/01/2026</div>
+                                                            </div>
+                                                            <Download size={16} className="text-gray-300 group-hover:text-pink-500" />
+                                                        </div>
+
+                                                        <div className="flex items-center p-4 rounded-xl border border-gray-100 hover:border-pink-200 hover:bg-pink-50/30 transition-colors cursor-pointer group">
+                                                            <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mr-4 group-hover:scale-110 transition-transform">
+                                                                <MessageCircle size={20} />
+                                                            </div>
+                                                            <div className="flex-1">
+                                                                <div className="text-sm font-bold text-gray-900">Templates d'annonce aux équipes</div>
+                                                                <div className="text-xs text-gray-500">3 modèles disponibles</div>
+                                                            </div>
+                                                            <Download size={16} className="text-gray-300 group-hover:text-blue-500" />
+                                                        </div>
+
+                                                        <div className="flex items-center p-4 rounded-xl border border-gray-100 hover:border-pink-200 hover:bg-pink-50/30 transition-colors cursor-pointer group">
+                                                            <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mr-4 group-hover:scale-110 transition-transform">
+                                                                <Star size={20} />
+                                                            </div>
+                                                            <div className="flex-1">
+                                                                <div className="text-sm font-bold text-gray-900">Guide de l'entretien de retour</div>
+                                                                <div className="text-xs text-gray-500">PDF • 12 pages</div>
+                                                            </div>
+                                                            <Download size={16} className="text-gray-300 group-hover:text-green-500" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-300 flex flex-col items-center justify-center text-center">
+                                                        <div className="text-sm font-bold text-gray-600 mb-1">Besoin d'un document spécifique ?</div>
+                                                        <button className="text-xs text-[#FFA6BF] font-bold hover:underline">Demander à l'expert juridique</button>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* TAB 2: FORMER (Managers) */}
+                                            {rhActiveTab === 2 && (
+                                                <div className="space-y-6">
+                                                    <div className="flex justify-between items-center mb-2">
+                                                        <h3 className="text-2xl font-bold text-gray-900">Formation Managers</h3>
+                                                        <span className="text-xs bg-[#FFD200]/20 text-yellow-700 font-bold px-2 py-1 rounded-md">E-Learning</span>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-2 gap-4">
+                                                        <div className="col-span-2 p-1 rounded-xl border border-gray-100 shadow-sm overflow-hidden group cursor-pointer hover:shadow-md transition-all">
+                                                            <div className="h-32 bg-gray-200 relative overflow-hidden rounded-lg">
+                                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                                                                <div className="absolute bottom-3 left-3 z-20 text-white">
+                                                                    <div className="text-[10px] font-bold bg-[#FFD200] text-black px-1.5 py-0.5 rounded inline-block mb-1">NOUVEAU</div>
+                                                                    <div className="font-bold text-sm">Réussir l'entretien de retour</div>
+                                                                </div>
+                                                                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                                                                <div className="absolute center inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-30">
+                                                                    <div className="w-10 h-10 bg-white/30 backdrop-blur rounded-full flex items-center justify-center">
+                                                                        <Play size={20} className="fill-white text-white ml-1" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="p-4 rounded-xl border border-gray-100 bg-white hover:border-yellow-300 transition-colors cursor-pointer flex flex-col gap-2">
+                                                            <Video size={24} className="text-[#FFD200]" />
+                                                            <div className="font-bold text-sm leading-tight text-gray-800">Le cadre légal en 5 min</div>
+                                                            <div className="text-[10px] text-gray-400 mt-auto">Video • 5:00</div>
+                                                        </div>
+
+                                                        <div className="p-4 rounded-xl border border-gray-100 bg-white hover:border-yellow-300 transition-colors cursor-pointer flex flex-col gap-2">
+                                                            <MessageCircle size={24} className="text-[#FFD200]" />
+                                                            <div className="font-bold text-sm leading-tight text-gray-800">Cas pratiques</div>
+                                                            <div className="text-[10px] text-gray-400 mt-auto">Quiz • 10 min</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="bg-[#FFD200]/10 p-3 rounded-lg flex items-start gap-3">
+                                                        <div className="bg-[#FFD200] rounded-full p-1 mt-0.5 shrink-0"><Star size={12} className="text-white fill-white" /></div>
+                                                        <div>
+                                                            <div className="text-sm font-bold text-gray-900">Atelier Inclusivité</div>
+                                                            <div className="text-xs text-gray-600">Prochaine session le 12 Mars</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column: RH Features List (Text) */}
+                    <div className="lg:col-span-5 flex flex-col gap-4 lg:order-2 order-1">
+                        {rhFeatures.map((feature, index) => (
+                            <div
+                                key={feature.id}
+                                onClick={() => setRhActiveTab(index)}
+                                className={`
+                                    group cursor-pointer rounded-2xl p-6 transition-all duration-300 border-2
+                                    ${rhActiveTab === index
+                                        ? 'bg-white border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] translate-x-[-2px] translate-y-[-2px]'
+                                        : 'bg-white/50 border-gray-100 hover:bg-white hover:border-gray-200'
+                                    }
+                                `}
+                            >
+                                <div className="flex items-start gap-5">
+                                    <div className={`
+                                        w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 border-2 border-black
+                                        ${rhActiveTab === index ? 'opacity-100' : 'opacity-80'}
+                                    `}
+                                        style={{ backgroundColor: rhActiveTab === index ? feature.color : '#f3f4f6' }}
+                                    >
+                                        <feature.icon size={24} className="text-black" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h3 className={`text-2xl font-bold ${rhActiveTab === index ? 'text-black' : 'text-gray-500 group-hover:text-black'}`}>
+                                                {feature.title}
+                                            </h3>
+                                            {rhActiveTab === index && (
+                                                <ChevronDown className="bg-black text-white rounded-full p-1 w-6 h-6 rotate-[-90deg]" />
+                                            )}
+                                        </div>
+                                        <AnimatePresence>
+                                            {rhActiveTab === index && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                                                        {feature.description}
+                                                    </p>
+                                                    <ul className="space-y-2 mb-4">
+                                                        {feature.details.map((detail, i) => (
+                                                            <li key={i} className="flex items-center text-base font-medium text-gray-700">
+                                                                <Check size={18} className="text-[#267B56] mr-3" />
+                                                                {detail}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                    <div className="text-base font-bold text-black/80 p-3 rounded-xl inline-block" style={{ backgroundColor: `${feature.color}40` }}>
+                                                        📈 {feature.benefit}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                        {rhActiveTab !== index && (
+                                            <p className="text-gray-400 text-lg line-clamp-1">
+                                                {feature.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+
+                        <div className="mt-8 text-center lg:text-left pl-2">
+                            <button
+                                className="
+                                    px-8 py-4 rounded-xl border-2 border-black
+                                    shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+                                    hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
+                                    hover:translate-x-[2px] hover:translate-y-[2px]
+                                    active:shadow-none active:translate-x-[4px] active:translate-y-[4px]
+                                    transition-all duration-200
+                                    text-white text-xl font-bold bg-[#1F3C32]
+                                "
+                            >
+                                Contacter l'équipe Pro
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     );
 }
+
