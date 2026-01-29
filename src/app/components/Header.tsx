@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Smartphone, Monitor } from 'lucide-react';
 import imgLogo from "@/assets/a53373c6f54724bb26f457eaf113f430222a0ad5.webp";
 
@@ -47,7 +48,7 @@ export function Header() {
 	};
 
 	const navItems = [
-		{ label: 'Nos Solutions', href: '#', hasDropdown: true },
+		{ label: 'Nos Solutions', href: '/nos-solutions', hasDropdown: true },
 		{ label: 'Devenir Partenaire', href: '#devenir-partenaire', hasDropdown: false },
 		{ label: 'Notre Équipe', href: '#equipe', hasDropdown: false },
 		{ label: 'FAQ', href: '#faq', hasDropdown: false },
@@ -90,14 +91,16 @@ export function Header() {
 				`}>
 					{/* Logo */}
 					<div className="flex-shrink-0">
-						<img
-							src={imgLogo}
-							alt="HappyDarons"
-							className={`
-								w-auto transition-all duration-500 ease-out
-								${isScrolled ? 'h-20 lg:h-20' : 'h-32 lg:h-40'}
-							`}
-						/>
+						<Link to="/">
+							<img
+								src={imgLogo}
+								alt="HappyDarons"
+								className={`
+									w-auto transition-all duration-500 ease-out cursor-pointer hover:opacity-90
+									${isScrolled ? 'h-20 lg:h-20' : 'h-32 lg:h-40'}
+								`}
+							/>
+						</Link>
 					</div>
 
 					{/* Desktop Navigation */}
@@ -212,15 +215,14 @@ export function Header() {
 
 											{/* Bottom CTA section */}
 											<div className="relative mt-2 pt-3 border-t border-white/10">
-												<a
-													href="#"
+												<Link
+													to="/nos-solutions"
 													className="
-														flex items-center justify-center gap-2 p-3 rounded-xl
-														text-white/70 text-sm font-medium
-														hover:bg-white/5 hover:text-[#ffa6bf]
-														transition-all duration-300
-													"
-													onClick={(e) => e.preventDefault()}
+											flex items-center justify-center gap-2 p-3 rounded-xl
+											text-white/70 text-sm font-medium
+											hover:bg-white/5 hover:text-[#ffa6bf]
+											transition-all duration-300
+										"
 												>
 													<span>Découvrir toutes nos solutions</span>
 													<svg
@@ -231,7 +233,7 @@ export function Header() {
 													>
 														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
 													</svg>
-												</a>
+												</Link>
 											</div>
 										</div>
 									</div>
