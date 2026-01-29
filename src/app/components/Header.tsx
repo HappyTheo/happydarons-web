@@ -297,10 +297,11 @@ export function Header() {
 					${mobileMenuOpen ? 'max-h-[600px] opacity-100 pb-6' : 'max-h-0 opacity-0'}
 				`}>
 					<nav className="space-y-1 pt-2">
-						{/* Nos Solutions with sub-menu */}
+						{/* Nos Solutions - Direct Link on Mobile */}
 						<div>
-							<button
-								onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+							<Link
+								to="/nos-solutions"
+								onClick={() => setMobileMenuOpen(false)}
 								className="
 									w-full flex items-center justify-between text-white text-lg font-medium py-3 px-4 
 									rounded-xl transition-all duration-300
@@ -308,52 +309,7 @@ export function Header() {
 								"
 							>
 								<span>Nos Solutions</span>
-								<ChevronDown
-									size={20}
-									className={`transition-transform duration-300 ${mobileSolutionsOpen ? 'rotate-180' : ''}`}
-								/>
-							</button>
-
-							{/* Mobile dropdown */}
-							<div className={`
-								overflow-hidden transition-all duration-300 ease-out
-								${mobileSolutionsOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}
-							`}>
-								<div className="pl-4 pr-2 py-2 space-y-2">
-									{solutionsDropdownItems.map((solution) => (
-										<a
-											key={solution.title}
-											href={solution.href}
-											onClick={() => setMobileMenuOpen(false)}
-											className="
-												group flex items-center gap-3 p-3 rounded-xl
-												bg-white/5 border border-white/10
-												transition-all duration-300
-												hover:bg-white/10 hover:border-[#ffa6bf]/30
-											"
-										>
-											<div className="
-												w-10 h-10 rounded-lg
-												bg-gradient-to-br from-[#ffa6bf]/20 to-[#ff8faa]/10
-												flex items-center justify-center
-												border border-[#ffa6bf]/20
-											">
-												<solution.icon size={18} className="text-[#ffa6bf]" />
-											</div>
-											<div className="flex-1">
-												<div className="flex items-center gap-2">
-													<span className="text-white font-medium text-sm">
-														{solution.title}
-													</span>
-												</div>
-												<p className="text-white/50 text-xs mt-0.5">
-													{solution.description}
-												</p>
-											</div>
-										</a>
-									))}
-								</div>
-							</div>
+							</Link>
 						</div>
 
 						{/* Other nav items */}
