@@ -1,3 +1,5 @@
+'use client';
+
 import { Baby, PersonStanding, Users, Landmark } from 'lucide-react';
 import { useState } from 'react';
 
@@ -37,9 +39,15 @@ const statsData: StatData[] = [
 ];
 
 function StatCard({ data }: { data: StatData }) {
+    const [isFlipped, setIsFlipped] = useState(false);
+
     return (
-        <div className="group perspective-1000 w-full h-[320px]">
-            <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-2xl">
+        <div
+            className="group perspective-1000 w-full h-[320px] cursor-pointer active:scale-95 transition-transform duration-200"
+            onClick={() => setIsFlipped(!isFlipped)}
+            onMouseLeave={() => setIsFlipped(false)}
+        >
+            <div className={`relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] rounded-2xl ${isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'}`}>
 
                 {/* Front Face */}
                 <div className="absolute inset-0 bg-white rounded-2xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-start pt-10 px-6 pb-6 text-center [backface-visibility:hidden]">
