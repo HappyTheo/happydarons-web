@@ -1,6 +1,7 @@
 import { Header } from '../components/Header';
 import { SolutionsHero } from '../components/SolutionsHero';
 import { SolutionsStats } from '../components/SolutionsStats';
+import { SolutionsFeatures } from '../components/SolutionsFeatures';
 import { Footer } from '../components/Footer';
 import { ScrollToTop } from '../components/ScrollToTop';
 
@@ -11,6 +12,7 @@ export function NosSolutions() {
             <main>
                 <SolutionsHero />
                 <SolutionsStats />
+                <SolutionsFeatures />
             </main>
             <Footer />
             <ScrollToTop />
