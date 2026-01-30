@@ -239,9 +239,9 @@ export function Header() {
 									</div>
 								</div>
 							) : (
-								<a
+								<Link
 									key={item.label}
-									href={item.href}
+									to={item.href.startsWith('#') ? `/${item.href}` : item.href}
 									className={`
 										text-white font-medium transition-all duration-300
 										hover:text-[#ffa6bf] hover:scale-105
@@ -251,10 +251,9 @@ export function Header() {
 										${item.href === '#' ? 'opacity-60 cursor-default hover:opacity-60 hover:scale-100 after:hidden' : ''}
 										${isScrolled ? 'text-lg' : 'text-xl'}
 									`}
-
 								>
 									{item.label}
-								</a>
+								</Link>
 							)
 						))}
 					</nav>
@@ -314,9 +313,9 @@ export function Header() {
 
 						{/* Other nav items */}
 						{navItems.slice(1).map((item) => (
-							<a
+							<Link
 								key={item.label}
-								href={item.href}
+								to={item.href.startsWith('#') ? `/${item.href}` : item.href}
 								onClick={() => setMobileMenuOpen(false)}
 								className="
 									block text-white text-lg font-medium py-3 px-4 
@@ -325,7 +324,7 @@ export function Header() {
 								"
 							>
 								{item.label}
-							</a>
+							</Link>
 						))}
 
 						<button
@@ -342,6 +341,6 @@ export function Header() {
 					</nav>
 				</div>
 			</div>
-		</header>
+		</header >
 	);
 }
