@@ -65,7 +65,7 @@ export function Header() {
 			icon: Monitor,
 			title: 'SaaS RH',
 			description: 'Une plateforme complète pour vos équipes RH',
-			href: '#',
+			href: '/nos-solutions#plateforme-rh',
 		},
 	];
 

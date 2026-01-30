@@ -544,7 +544,7 @@ export function SolutionsFeatures() {
                 <div className="w-full h-px bg-gray-200 my-20 lg:my-32"></div>
 
                 {/* RH PLATFORM SECTION */}
-                <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
+                <div id="plateforme-rh" className="text-center max-w-4xl mx-auto mb-16 lg:mb-24 scroll-mt-32">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#e0f2fe] text-[#0c4a6e] font-bold text-sm tracking-wide mb-6 uppercase">
                         PLATEFORME RH
                     </div>
