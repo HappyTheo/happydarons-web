@@ -22,8 +22,8 @@ export function ForHR() {
 
 					{/* Content - Right */}
 					<div className="space-y-6 order-1 lg:order-2">
-						<div className="inline-block bg-[#ffa6bf]/30 border border-[#ffa6bf]/50 rounded-full px-5 py-2">
-							<span className="text-[#203b31] font-semibold text-sm lg:text-base">Pour les RH et managers</span>
+						<div className="inline-flex px-4 py-2 rounded-full bg-white text-[#203b31] font-bold text-sm tracking-wide uppercase shadow-sm">
+							Pour les RH et managers
 						</div>
 
 						<h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#203b31] leading-tight">

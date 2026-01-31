@@ -259,9 +259,10 @@ export function FAQ() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 lg:mb-14">
-          <div className="inline-block bg-[#267b56] text-white px-6 py-2 rounded-full mb-6 border-2 border-[#1a5a3e] shadow-[4px_4px_0px_0px_rgba(26,90,62,1)]">
-            <span className="font-semibold text-sm lg:text-base">FAQ</span>
+          <div className="inline-flex px-4 py-2 rounded-full bg-white text-[#267B56] font-bold text-sm tracking-wide uppercase shadow-sm mb-6">
+            FAQ
           </div>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#203b31]">
             Questions fréquentes
           </h2>

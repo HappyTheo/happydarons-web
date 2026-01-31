@@ -11,8 +11,8 @@ export function ForParents() {
 				<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 					{/* Content - Left */}
 					<div className="space-y-6">
-						<div className="inline-block bg-[#267b56]/20 border border-[#267b56]/40 rounded-full px-5 py-2">
-							<span className="text-[#267b56] font-semibold text-sm lg:text-base">Pour vos collaborateurs</span>
+						<div className="inline-flex px-4 py-2 rounded-full bg-white text-[#267B56] font-bold text-sm tracking-wide uppercase shadow-sm">
+							Pour vos collaborateurs
 						</div>
 
 						<h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#203b31] leading-tight">
