@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Brain, BookOpen, Users, Briefcase, ChevronDown, Check, Wifi, Battery, Signal, Play, Pause, Heart, Calendar, MessageCircle, Star, BarChart3, FileText, GraduationCap, LayoutDashboard, Settings, Bell, Search, Menu, User, PieChart, TrendingUp, Download, FileCheck, Video } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PopupModal } from "react-calendly";
 
 export function SolutionsFeatures() {
     const [activeTab, setActiveTab] = useState(0);
@@ -12,6 +13,13 @@ export function SolutionsFeatures() {
 
     // RH Section State
     const [rhActiveTab, setRhActiveTab] = useState(0);
+
+    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+    const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+        setRootElement(document.getElementById("root"));
+    }, []);
 
     const rhFeatures = [
         {
@@ -209,6 +217,7 @@ export function SolutionsFeatures() {
 
                         <div className="mt-8 text-center lg:text-left pl-2">
                             <button
+                                onClick={() => setIsCalendlyOpen(true)}
                                 className="
                                     px-8 py-4 rounded-xl border-2 border-black
                                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
@@ -870,6 +879,7 @@ export function SolutionsFeatures() {
 
                         <div className="mt-8 text-center lg:text-left pl-2">
                             <button
+                                onClick={() => setIsCalendlyOpen(true)}
                                 className="
                                     px-8 py-4 rounded-xl border-2 border-black
                                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
@@ -887,6 +897,15 @@ export function SolutionsFeatures() {
 
                 </div>
             </div>
+
+            {rootElement && (
+                <PopupModal
+                    url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+                    onModalClose={() => setIsCalendlyOpen(false)}
+                    open={isCalendlyOpen}
+                    rootElement={rootElement}
+                />
+            )}
         </section>
     );
 }

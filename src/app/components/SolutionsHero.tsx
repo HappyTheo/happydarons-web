@@ -1,6 +1,15 @@
+import React, { useState, useEffect } from 'react';
+import { PopupModal } from "react-calendly";
 import heroImage from '@/assets/template2 1.webp';
 
 export function SolutionsHero() {
+    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+    const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+        setRootElement(document.getElementById("root"));
+    }, []);
+
     const features = [
         "Une app pour les parents.",
         "Une plateforme RH pour piloter.",
@@ -78,6 +87,7 @@ export function SolutionsHero() {
 
                         {/* CTA Button - Pink with neobrutalism style */}
                         <button
+                            onClick={() => setIsCalendlyOpen(true)}
                             className="
 								px-8 py-4 lg:px-10 lg:py-5
 								rounded-xl lg:rounded-2xl
@@ -114,6 +124,15 @@ export function SolutionsHero() {
                     </div>
                 </div>
             </div>
+
+            {rootElement && (
+                <PopupModal
+                    url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+                    onModalClose={() => setIsCalendlyOpen(false)}
+                    open={isCalendlyOpen}
+                    rootElement={rootElement}
+                />
+            )}
         </section>
     );
 }

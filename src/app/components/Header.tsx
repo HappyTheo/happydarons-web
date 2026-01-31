@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Smartphone, Monitor } from 'lucide-react';
+import { PopupModal } from "react-calendly";
 import imgLogo from "@/assets/a53373c6f54724bb26f457eaf113f430222a0ad5.webp";
 
 export function Header() {
@@ -10,6 +11,8 @@ export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [solutionsOpen, setSolutionsOpen] = useState(false);
 	const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+	const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+	const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -17,6 +20,8 @@ export function Header() {
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 50);
 		};
+
+		setRootElement(document.getElementById("root"));
 
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
@@ -260,6 +265,7 @@ export function Header() {
 
 					{/* CTA Button - Desktop */}
 					<button
+						onClick={() => setIsCalendlyOpen(true)}
 						className={`
 							hidden lg:block bg-gradient-to-r from-[#ffa6bf] to-[#ff8faa] 
 							text-white font-semibold rounded-xl
@@ -328,6 +334,10 @@ export function Header() {
 						))}
 
 						<button
+							onClick={() => {
+								setMobileMenuOpen(false);
+								setIsCalendlyOpen(true);
+							}}
 							className="
 								w-full mt-4 bg-gradient-to-r from-[#ffa6bf] to-[#ff8faa] 
 								text-white text-lg font-semibold px-6 py-4 rounded-xl 
@@ -341,6 +351,15 @@ export function Header() {
 					</nav>
 				</div>
 			</div>
-		</header >
+
+			{rootElement && (
+				<PopupModal
+					url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+					onModalClose={() => setIsCalendlyOpen(false)}
+					open={isCalendlyOpen}
+					rootElement={rootElement}
+				/>
+			)}
+		</header>
 	);
 }
