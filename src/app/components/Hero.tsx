@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import confetti from "canvas-confetti";
 import imgHero from "@/assets/1dbc17ebcbcc9a9e6bd2200ca3c80b6af952eb95.webp";
 import imgHeroBg from "@/assets/40b3b75ab6b28adeae2dec5506df869ea93e0f8d.webp";
@@ -113,6 +114,8 @@ function StatCard({ icon, value, label, highlight, source }: { icon: string; val
 }
 
 export function Hero() {
+	const navigate = useNavigate();
+
 	return (
 		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at bottom right, #203B31 64%, #357F5D 99%)' }}>
 			{/* Content */}
@@ -129,7 +132,10 @@ export function Hero() {
 					La solution qui soutient le quotidien des parents et simplifie la vie des RH.
 				</p>
 
-				<button className="w-auto bg-[#ffa6bf] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base sm:text-lg font-medium mb-8 lg:mb-12">
+				<button
+					onClick={() => navigate('/nos-solutions')}
+					className="w-auto bg-[#ffa6bf] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base sm:text-lg font-medium mb-8 lg:mb-12"
+				>
 					Découvrir nos solutions
 				</button>
 			</div>
