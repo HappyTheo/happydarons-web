@@ -242,7 +242,7 @@ export function SolutionsCatalogue() {
                         </span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Animés par nos spécialistes : <span className="text-[#FFA6BF] font-semibold">psychologues</span>, <span className="text-[#267B56] font-semibold">doulas</span>, <span className="text-[#FFD200] font-semibold">sage-femmes</span>, naturopathes, nutritionnistes…
+                        Animés par nos spécialistes : <span className="text-[#FFA6BF] font-semibold">psychologues</span>, <span className="text-[#267B56] font-semibold">doulas</span>, <span className="text-[#FFD200] font-semibold">sage-femmes</span>, <span className="text-[#FFA6BF] font-semibold">naturopathes</span>, <span className="text-[#267B56] font-semibold">nutritionnistes</span>…
                     </p>
                 </div>
 
