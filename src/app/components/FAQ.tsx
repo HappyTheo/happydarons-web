@@ -259,7 +259,7 @@ export function FAQ() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 lg:mb-14">
-          <div className="inline-flex px-4 py-2 rounded-full bg-white text-[#267B56] font-bold text-sm tracking-wide uppercase shadow-sm mb-6">
+          <div className="inline-flex px-4 py-2 rounded-full bg-[#267B56] text-[#ffa6bf] font-bold text-sm tracking-wide uppercase shadow-sm mb-6">
             FAQ
           </div>
 

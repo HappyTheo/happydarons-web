@@ -10,8 +10,8 @@ export function ConstatSection() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="text-center mb-10 lg:mb-16">
-					<div className="inline-block bg-[#267b56] text-white px-6 py-2 rounded-full mb-6 border-2 border-[#1a5a3e] shadow-[4px_4px_0px_0px_rgba(26,90,62,1)] active:shadow-[2px_2px_0px_0px_rgba(26,90,62,1)] active:translate-x-[2px] active:translate-y-[2px] transition-all">
-						<span className="font-semibold text-sm lg:text-base">Notre constat</span>
+					<div className="inline-flex px-4 py-2 rounded-full bg-[#ffa6bf] text-[#267B56] font-bold text-sm tracking-wide uppercase shadow-sm mb-6">
+						Notre constat
 					</div>
 
 					<h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#203b31] leading-tight max-w-4xl mx-auto">
