@@ -43,7 +43,7 @@ const faqs = [
     items: [
       {
         question: "Qu'est-ce qu'HappyDarons ?",
-        answer: "HappyDarons est une solution complète qui soutient les salarié·e·s-parents à chaque étape de la parentalité et aide les entreprises à structurer une politique parentale inclusive et durable."
+        answer: "HappyDarons est une solution complète qui soutient les salarié.e.s-parents à chaque étape de la parentalité et aide les entreprises à structurer une politique parentale inclusive et durable."
       },
       {
         question: "À qui s'adresse HappyDarons ?",
@@ -102,7 +102,7 @@ const faqs = [
       },
       {
         question: "Comment fonctionnent les services partenaires via l'app ?",
-        answer: "Les salarié·e·s réservent en quelques clics. Sur certains services, ils utilisent leurs crédits ; sur d'autres, un tarif négocié HappyDarons s'applique."
+        answer: "Les salarié.e.s réservent en quelques clics. Sur certains services, ils utilisent leurs crédits ; sur d'autres, un tarif négocié HappyDarons s'applique."
       }
     ]
   },

@@ -91,7 +91,7 @@ const ateliersEssentiels = [
 const formationsManagers = [
     {
         id: 1,
-        title: "Manager des salarié·e·s-parents",
+        title: "Manager des salarié.e.s-parents",
         subtitle: "avec bienveillance et efficacité",
         details: "Formation complète pour développer un management inclusif et performant adapté aux réalités parentales.",
         duration: "Demi-journée",

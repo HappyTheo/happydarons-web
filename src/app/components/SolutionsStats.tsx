@@ -15,7 +15,7 @@ const statsData: StatData[] = [
     {
         icon: Baby, // Biberon / Bébé
         title: "82%",
-        text: "des salarié·e·s-parents envisagent de quitter leur poste par manque de soutien.",
+        text: "des salarié.e.s-parents envisagent de quitter leur poste par manque de soutien.",
         source: "Source : Baromètre de la Parentalité en Entreprise 2023"
     },
     {

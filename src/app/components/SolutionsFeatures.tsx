@@ -567,7 +567,7 @@ export function SolutionsFeatures() {
                         </span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                        Grâce à un tableau de bord clair, des outils clés en main et des données actionnables, vous accompagnez vos collaborateur·rice·s tout au long de leur parentalité.
+                        Grâce à un tableau de bord clair, des outils clés en main et des données actionnables, vous accompagnez vos collaborateur.rice.s tout au long de leur parentalité.
                     </p>
                 </div>
 

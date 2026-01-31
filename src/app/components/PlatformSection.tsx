@@ -14,7 +14,7 @@ export function PlatformSection() {
 
 				<div className="max-w-5xl mx-auto space-y-6 text-center text-lg lg:text-xl text-[#203b31]">
 					<p>
-						On aide les entreprises à mieux accompagner leurs salarié·e·s-parents à chaque étape, grâce à une solution qui allège leur charge mentale et les aide à concilier vie pro et vie perso.
+						On aide les entreprises à mieux accompagner leurs salarié.e.s-parents à chaque étape, grâce à une solution qui allège leur charge mentale et les aide à concilier vie pro et vie perso.
 					</p>
 					<p className="text-base lg:text-lg text-[#203b31]/70">
 						Le tout pour mieux attirer, engager et fidéliser vos talents… et enfin construire une culture d'entreprise plus inclusive, humaine et durable.

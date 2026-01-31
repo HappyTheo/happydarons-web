@@ -24,7 +24,7 @@ export function PartnerExperts() {
         },
         {
             title: "Consultations",
-            desc: "Proposez des rendez-vous individuels aux salarié·e·s-parents.",
+            desc: "Proposez des rendez-vous individuels aux salarié.e.s-parents.",
             color: "bg-[#FFA6BF]"
         },
         {

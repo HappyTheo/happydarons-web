@@ -19,7 +19,7 @@ export function SolutionsBenefits() {
         },
         {
             icon: Users,
-            title: "Ne plus jamais être seul·e",
+            title: "Ne plus jamais être seul.e",
             text: "Experts, programmes, et communauté bienveillante.",
             color: "bg-[#FFD200]"
         }
@@ -72,7 +72,7 @@ export function SolutionsBenefits() {
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-4">
                             ⭐ Les avantages pour vos <br className="hidden md:block" />
-                            <span className="text-[#FFA6BF]">salarié·e·s-parents</span>
+                            <span className="text-[#FFA6BF]">salarié.e.s-parents</span>
                         </h2>
                     </div>
 

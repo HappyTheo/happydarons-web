@@ -116,7 +116,7 @@ export function PartnerServices() {
                         <div className="space-y-6 relative z-10">
                             {[
                                 { step: "1", text: "Votre service est référencé sur notre plateforme" },
-                                { step: "2", text: "Il est proposé aux salarié·e·s-parents via leur entreprise" },
+                                { step: "2", text: "Il est proposé aux salarié.e.s-parents via leur entreprise" },
                                 { step: "3", text: "Vous bénéficiez d’une visibilité ciblée et qualifiée" }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-[#267B56]/10">

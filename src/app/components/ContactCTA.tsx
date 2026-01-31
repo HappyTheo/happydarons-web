@@ -16,7 +16,7 @@ export function ContactCTA() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[rgba(251,229,223,0.7)] border-2 border-black rounded-3xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2a2a28] mb-4 lg:mb-6">
-            Prêt·e à mieux accompagner vos salarié·e·s-parents ?
+            Prêt.e à mieux accompagner vos salarié.e.s-parents ?
           </h2>
 
           <p className="text-lg lg:text-xl text-black mb-8 lg:mb-12">
