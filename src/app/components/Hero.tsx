@@ -117,7 +117,7 @@ export function Hero() {
 	const navigate = useNavigate();
 
 	return (
-		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at bottom right, #203B31 64%, #357F5D 99%)' }}>
+		<section className="relative min-h-screen overflow-hidden pt-40 lg:pt-38" style={{ background: 'radial-gradient(circle at top right, #357F5D 0%, #203B31 60%)' }}>
 			{/* Content */}
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 lg:pt-16">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight">
