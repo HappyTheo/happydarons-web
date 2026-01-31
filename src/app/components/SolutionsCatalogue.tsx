@@ -487,7 +487,7 @@ export function SolutionsCatalogue() {
                                     <div>
                                         <span className="text-xs font-bold text-[#267B56] uppercase tracking-wider">Leadership</span>
                                         <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[#1F3C32]">
-                                            Formations Managers
+                                            Formations RH/Managers
                                         </h3>
                                     </div>
                                 </div>
