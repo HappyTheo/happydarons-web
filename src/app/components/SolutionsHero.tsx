@@ -51,9 +51,9 @@ export function SolutionsHero() {
                     <div className="lg:w-1/2 lg:pr-4 flex flex-col items-center">
                         {/* Main Title */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-10 lg:mb-12 text-center">
-                            La <span style={{ color: '#FFA6BF' }}>solution</span> qui prend soin<br />
-                            de celles et ceux qui<br />
-                            prennent soin des autres.
+                            <span className="block md:whitespace-nowrap">La <span style={{ color: '#FFA6BF' }}>solution</span> qui prend soin</span>
+                            <span className="block md:whitespace-nowrap">de celles et ceux qui</span>
+                            <span className="block md:whitespace-nowrap">prennent soin des autres.</span>
                         </h1>
 
                         {/* Feature list with flower petal bullet points */}
