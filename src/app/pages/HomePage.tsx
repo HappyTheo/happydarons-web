@@ -21,8 +21,8 @@ export function HomePage() {
                 <ForParents />
                 <ForHR />
                 <ConstatSection />
-                <MediaSection />
                 <Testimonials />
+                <MediaSection />
                 <FAQ />
                 <ContactCTA />
             </main>
