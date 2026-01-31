@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import imgParents from "@/assets/89f67d87f20fb0ca0f1bb876745537a1c6f2ed29.webp";
 
 export function ForParents() {
+	const navigate = useNavigate();
 	return (
 		<section className="relative bg-gradient-to-b from-[#fae6e9] to-[#fff5f7] py-16 lg:py-24 overflow-hidden">
 
@@ -22,7 +24,10 @@ export function ForParents() {
 							Du projet bébé (parcours PMA, adoption) à l'adolescence : contenus, services, assistant familial et soutien émotionnel.
 						</p>
 
-						<button className="bg-[#267b56] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium">
+						<button
+							onClick={() => navigate('/nos-solutions#app-mobile')}
+							className="bg-[#267b56] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium"
+						>
 							Découvrir nos solutions
 						</button>
 					</div>

@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import imgHR from "@/assets/e12a97d8767dbbbcbea7c9b9f5b3461c84d7ffdc.webp";
 
 export function ForHR() {
+	const navigate = useNavigate();
 	return (
 		<section className="relative bg-gradient-to-b from-[#fff5f7] to-[#fae6e9] py-16 lg:py-24 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +35,10 @@ export function ForHR() {
 							Formez vos managers, sensibilisez vos équipes et pilotez en temps réel le bien-être parental pour mieux comprendre les besoins et mesurer l'impact de vos actions.
 						</p>
 
-						<button className="bg-[#ffa6bf] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium">
+						<button
+							onClick={() => navigate('/nos-solutions#plateforme-rh')}
+							className="bg-[#ffa6bf] text-white px-6 py-3 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all text-base font-medium"
+						>
 							Découvrir nos solutions
 						</button>
 					</div>
