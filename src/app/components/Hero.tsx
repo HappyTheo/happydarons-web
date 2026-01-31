@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import confetti from "canvas-confetti";
 import imgHero from "@/assets/1dbc17ebcbcc9a9e6bd2200ca3c80b6af952eb95.webp";
 import imgHeroBg from "@/assets/40b3b75ab6b28adeae2dec5506df869ea93e0f8d.webp";
@@ -52,9 +53,17 @@ const stats = [
 const logos = [imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2];
 
 function StatCard({ icon, value, label, highlight, source }: { icon: string; value: string; label: string; highlight: string; source: string }) {
+	const [isFlipped, setIsFlipped] = useState(false);
 	const parts = label.split(highlight);
 
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (isFlipped) {
+			setIsFlipped(false);
+			return;
+		}
+
+		setIsFlipped(true);
+
 		const rect = e.currentTarget.getBoundingClientRect();
 		const x = (rect.left + rect.width / 2) / window.innerWidth;
 		const y = (rect.top + rect.height / 2) / window.innerHeight;
@@ -65,11 +74,16 @@ function StatCard({ icon, value, label, highlight, source }: { icon: string; val
 			spread: 70,
 			zIndex: 100,
 		});
+
+		// Auto-reset after 1.8 seconds
+		setTimeout(() => {
+			setIsFlipped(false);
+		}, 1800);
 	};
 
 	return (
 		<div onClick={handleClick} className="group perspective-1000 select-none cursor-pointer w-[160px] lg:w-[200px] h-[140px] lg:h-[160px]">
-			<div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-lg">
+			<div className={`relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)_translateY(4px)] shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1'} rounded-lg`}>
 				{/* Front Face */}
 				<div className="absolute inset-0 bg-white rounded-lg p-3 lg:p-4 border-2 border-black flex flex-col items-center justify-center gap-2 lg:gap-3 text-center [backface-visibility:hidden]">
 					<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
