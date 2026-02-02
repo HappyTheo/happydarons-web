@@ -20,6 +20,9 @@ import imgInes from '@/assets/Photo trombi Grine.webp';
 import imgSasha from '@/assets/Sasha R.webp';
 import imgSolene from '@/assets/Solene.webp';
 import imgGilles from '@/assets/gilles atelier du futuur papa.webp';
+import imgTess from '@/assets/Tess.webp';
+import imgTheo from '@/assets/Theo.webp';
+import imgLaureen from '@/assets/Laureen.webp';
 
 // Placeholder for missing images
 const PlaceholderImage = ({ title, className }: { title: string; className?: string }) => (
@@ -57,7 +60,7 @@ const founders = [
             "Tess, c’est l’énergie incarnée — toujours en mouvement, toujours positive.",
             "Passionnée de kitesurf, de course à pied, danse et d’aventures collectives."
         ],
-        image: "tess.jpg"
+        image: imgTess
     },
     {
         name: "Laureen",
@@ -69,7 +72,7 @@ const founders = [
             "Solaire, elle capte rapidement les enjeux de ses interlocuteurs.",
             "Sportive elle aussi, elle partage son temps entre golf, surf et course à pied."
         ],
-        image: "laureen.jpg"
+        image: imgLaureen
     }
 ];
 
@@ -167,7 +170,7 @@ export function Team() {
                         {founders.map((founder, idx) => (
                             <div key={idx} className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center">
                                 <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-[#1F3C32]/5 mb-8 overflow-hidden">
-                                    <PlaceholderImage title={founder.name} className="w-full h-full text-2xl" />
+                                    <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" />
                                 </div>
                                 <h3 className="text-2xl lg:text-3xl font-bold text-[#1F3C32] mb-6">{founder.name}</h3>
                                 <div className="space-y-4 text-gray-600 text-left">
@@ -241,26 +244,32 @@ export function Team() {
             </section>
 
             {/* Founding Team */}
-            <section className="py-20 bg-[#FAF3F5] border-t border-white">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-[#1F3C32] mb-12">
+            <section className="py-20 lg:py-32 bg-[#1F3C32] border-t border-white">
+                <div className="max-w-6xl mx-auto px-4 text-center">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-white mb-16 lg:mb-24">
                         Et pour l'Équipe Fondatrice
                     </h2>
-                    <div className="flex flex-wrap justify-center gap-12">
+                    <div className="flex flex-wrap justify-center gap-12 lg:gap-24">
                         <div className="flex flex-col items-center">
-                            <div className="w-32 h-32 rounded-full bg-[#1F3C32] mb-4 flex items-center justify-center text-white text-2xl font-bold">TC</div>
-                            <p className="font-bold text-[#1F3C32]">Tess Cevaer</p>
-                            <p className="text-sm text-gray-600">Co-fondatrice</p>
+                            <div className="w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-[#1F3C32] mb-6 lg:mb-8 overflow-hidden border-4 border-white shadow-lg">
+                                <img src={imgTess} alt="Tess Cevaer" className="w-full h-full object-cover" />
+                            </div>
+                            <p className="font-bold text-white text-lg lg:text-3xl mb-2">Tess Cevaer</p>
+                            <p className="text-sm lg:text-xl text-[#FFA6BF]">Co-fondatrice</p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <div className="w-32 h-32 rounded-full bg-[#FFA6BF] mb-4 flex items-center justify-center text-[#1F3C32] text-2xl font-bold">LC</div>
-                            <p className="font-bold text-[#1F3C32]">Laureen Cevaer</p>
-                            <p className="text-sm text-gray-600">Co-fondatrice</p>
+                            <div className="w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-[#FFA6BF] mb-6 lg:mb-8 overflow-hidden border-4 border-white shadow-lg">
+                                <img src={imgLaureen} alt="Laureen Cevaer" className="w-full h-full object-cover" />
+                            </div>
+                            <p className="font-bold text-white text-lg lg:text-3xl mb-2">Laureen Cevaer</p>
+                            <p className="text-sm lg:text-xl text-[#FFA6BF]">Co-fondatrice</p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <div className="w-32 h-32 rounded-full bg-[#267B56] mb-4 flex items-center justify-center text-white text-2xl font-bold">TS</div>
-                            <p className="font-bold text-[#1F3C32]">Theo Schlegel</p>
-                            <p className="text-sm text-gray-600">CTO</p>
+                            <div className="w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-[#267B56] mb-6 lg:mb-8 overflow-hidden border-4 border-white shadow-lg">
+                                <img src={imgTheo} alt="Theo Schlegel" className="w-full h-full object-cover" />
+                            </div>
+                            <p className="font-bold text-white text-lg lg:text-3xl mb-2">Theo Schlegel</p>
+                            <p className="text-sm lg:text-xl text-[#FFA6BF]">CTO</p>
                         </div>
                     </div>
                 </div>
