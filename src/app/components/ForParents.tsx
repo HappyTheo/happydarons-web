@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import imgParents from "@/assets/89f67d87f20fb0ca0f1bb876745537a1c6f2ed29.webp";
+import { HomePhoneMockup } from './HomePhoneMockup';
 
 export function ForParents() {
 	const navigate = useNavigate();
@@ -35,13 +35,8 @@ export function ForParents() {
 					{/* Image - Right */}
 					<div className="relative flex justify-center lg:justify-end">
 						<div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center">
-							{/* Green blurred spot behind the image */}
-							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square lg:w-[90%] lg:h-[90%] lg:aspect-auto bg-[#267B56] blur-[50px] opacity-60 rounded-full" />
-							<img
-								src={imgParents}
-								alt="Application mobile HappyDarons"
-								className="relative z-10 w-full h-auto"
-							/>
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square lg:w-[90%] lg:h-[90%] lg:aspect-auto bg-[#267B56] blur-[50px] opacity-60 rounded-full pointer-events-none" />
+							<HomePhoneMockup />
 						</div>
 					</div>
 				</div>

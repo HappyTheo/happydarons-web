@@ -14,11 +14,11 @@ export function NosSolutions() {
             <Header />
             <main>
                 <SolutionsHero />
-                <SolutionsStats />
+                <SolutionsWhyUs />
                 <SolutionsFeatures />
                 <SolutionsCatalogue />
                 <SolutionsBenefits />
-                <SolutionsWhyUs />
+                <SolutionsStats />
             </main>
             <Footer />
             <ScrollToTop />

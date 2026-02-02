@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import imgHR from "@/assets/e12a97d8767dbbbcbea7c9b9f5b3461c84d7ffdc.webp";
+import { RhDashboardMockup } from './RhDashboardMockup';
 
 export function ForHR() {
 	const navigate = useNavigate();
@@ -11,12 +11,8 @@ export function ForHR() {
 					<div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
 						<div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center">
 							{/* Pink blurred spot behind the image */}
-							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#FFA6BF] blur-[50px] opacity-[0.54] rounded-full" />
-							<img
-								src={imgHR}
-								alt="Dashboard HappyDarons pour RH"
-								className="relative z-10 w-full h-auto"
-							/>
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#FFA6BF] blur-[50px] opacity-[0.54] rounded-full pointer-events-none" />
+							<RhDashboardMockup />
 						</div>
 					</div>
 

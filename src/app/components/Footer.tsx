@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -7,19 +7,30 @@ export function Footer() {
         <div className="flex flex-col items-center gap-6">
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <a 
-              href="#" 
+            <a
+              href="https://fr.linkedin.com/company/happydarons"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-black flex items-center justify-center hover:bg-[#ffa6bf] hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5 lg:w-6 lg:h-6" />
             </a>
-            <a 
-              href="#" 
+            <a
+              href="mailto:hello@happydarons.fr"
               className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-black flex items-center justify-center hover:bg-[#ffa6bf] hover:text-white transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5 lg:w-6 lg:h-6" />
+            </a>
+            <a
+              href="https://www.instagram.com/happydarons/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-black flex items-center justify-center hover:bg-[#ffa6bf] hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5 lg:w-6 lg:h-6" />
             </a>
           </div>
 

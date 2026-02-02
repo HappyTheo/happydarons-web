@@ -247,7 +247,7 @@ export function SolutionsCatalogue() {
                 </div>
 
                 {/* Stacking Cards Container */}
-                <div className="relative pb-32">
+                <div className="relative pb-20">
 
                     {/* Card 1: Ateliers & Conférences */}
                     <div
@@ -667,7 +667,7 @@ export function SolutionsCatalogue() {
 
                     {/* Card 3: Download Form */}
                     <div
-                        className="relative lg:sticky pb-32 lg:top-[120px]"
+                        className="relative lg:sticky pb-20 lg:top-[120px]"
                         style={{ zIndex: 30 }}
                     >
                         <motion.div

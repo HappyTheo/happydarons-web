@@ -5,6 +5,25 @@ export function ContactCTA() {
   const [isOpen, setIsOpen] = useState(false);
   const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
 
+  // Elegant oval petals bullet - 3 ovals fanning out
+  const PetalBullet = () => (
+    <div className="relative w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center translate-y-[2px]">
+      {/* 3 oval petals in a fan/arc arrangement */}
+      <div
+        className="absolute w-[6px] h-[18px] rounded-full -rotate-[40deg] -translate-x-[4px] -translate-y-[3px]"
+        style={{ backgroundColor: '#267B56' }}
+      />
+      <div
+        className="absolute w-[7px] h-[21px] rounded-full -translate-y-[6px]"
+        style={{ backgroundColor: '#FFA6BF' }}
+      />
+      <div
+        className="absolute w-[6px] h-[18px] rounded-full rotate-[40deg] translate-x-[4px] -translate-y-[3px]"
+        style={{ backgroundColor: '#267B56' }}
+      />
+    </div>
+  );
+
   useEffect(() => {
     // Wait for the component to be mounted before setting the root element
     // ensuring we are on client side and 'root' exists
@@ -30,11 +49,23 @@ export function ContactCTA() {
               Echangeons ensemble !
             </h3>
 
-            <div className="space-y-3 text-left text-sm lg:text-base text-black mb-6">
-              <p>✨ ateliers concrets et engageants</p>
-              <p>✨ programmes adaptés</p>
-              <p>✨ accompagnement simple et humain pour vos équipes</p>
-              <p>✨ mise en place rapide et sans friction</p>
+            <div className="space-y-4 text-left text-sm lg:text-base text-black mb-6">
+              <div className="flex items-start">
+                <PetalBullet />
+                <span>ateliers concrets et engageants</span>
+              </div>
+              <div className="flex items-start">
+                <PetalBullet />
+                <span>programmes adaptés</span>
+              </div>
+              <div className="flex items-start">
+                <PetalBullet />
+                <span>accompagnement simple et humain pour vos équipes</span>
+              </div>
+              <div className="flex items-start">
+                <PetalBullet />
+                <span>mise en place rapide et sans friction</span>
+              </div>
             </div>
 
             <button

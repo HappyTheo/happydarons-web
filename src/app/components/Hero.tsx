@@ -8,56 +8,59 @@ import imgLogo2 from "@/assets/39a652a1f8d82824c98570dc063a819885b107bc.webp";
 
 const stats = [
 	{
-		icon: "📈",
+		icon: "",
 		value: "+8%",
 		label: "ROI grâce à une politique de parentalité efficace",
 		highlight: "ROI",
-		source: "Source : Étude interne HappyDarons",
+		source: "Source : ILO – International Labour Organization",
 	},
 	{
-		icon: "💰",
+		icon: "",
 		value: "-50%",
 		label: "finançables via le Crédit d'Impôt Famille",
 		highlight: "Crédit d'Impôt Famille",
 		source: "Source : Code Général des Impôts",
 	},
 	{
-		icon: "📋",
+		icon: "",
 		value: "-30%",
 		label: "d'absentéisme évitable lié à la parentalité",
 		highlight: "d'absentéisme",
-		source: "Source : Baromètre Absentéisme 2023",
+		source: "Source : Malakoff Humanis, Baromètre 2023",
 	},
 	{
-		icon: "🎯",
+		icon: "",
 		value: "15 à 25K€",
 		label: "économisés grâce à la baisse du turnover",
 		highlight: "turnover",
-		source: "Source : Étude Work Institute",
+		source: "Source : Cabinet Mozart Consulting – Indicateur de bien-être et coût du turnover (IBET)",
 	},
 	{
-		icon: "👥",
+		icon: "",
 		value: "",
 		label: "Applicable à toutes les catégories de salariés (cadres, ouvriers, etc.)",
 		highlight: "catégories de salariés",
-		source: "Source : Politique RH inclusive",
+		source: "",
 	},
 	{
-		icon: "💚",
+		icon: "",
 		value: "",
 		label: "Améliorer sa marque employeur",
 		highlight: "marque employeur",
-		source: "Source : Marque Employeur 2024",
+		source: "",
 	},
 ];
 
 const logos = [imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2];
 
-function StatCard({ icon, value, label, highlight, source }: { icon: string; value: string; label: string; highlight: string; source: string }) {
+function StatCard({ icon, value, label, highlight, source }: { icon?: string; value: string; label: string; highlight: string; source: string }) {
 	const [isFlipped, setIsFlipped] = useState(false);
 	const parts = label.split(highlight);
 
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		// Disable flip if no source is provided
+		if (!source) return;
+
 		if (isFlipped) {
 			setIsFlipped(false);
 			return;
@@ -83,13 +86,15 @@ function StatCard({ icon, value, label, highlight, source }: { icon: string; val
 	};
 
 	return (
-		<div onClick={handleClick} className="group perspective-1000 select-none cursor-pointer w-[160px] lg:w-[200px] h-[140px] lg:h-[160px]">
+		<div onClick={handleClick} className={`group perspective-1000 select-none w-[160px] lg:w-[200px] h-[140px] lg:h-[160px] ${source ? 'cursor-pointer' : 'cursor-default'}`}>
 			<div className={`relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)_translateY(4px)] shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1'} rounded-lg`}>
 				{/* Front Face */}
 				<div className="absolute inset-0 bg-white rounded-lg p-3 lg:p-4 border-2 border-black flex flex-col items-center justify-center gap-2 lg:gap-3 text-center [backface-visibility:hidden]">
-					<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
-						{icon}
-					</div>
+					{icon && (
+						<div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#fae6e9] flex items-center justify-center text-sm lg:text-xl flex-shrink-0">
+							{icon}
+						</div>
+					)}
 					<div className="w-full">
 						{value && (
 							<p className="text-base lg:text-xl font-bold text-[#203b31] mb-1">{value}</p>
