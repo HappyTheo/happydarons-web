@@ -10,7 +10,7 @@ import imgMaud from '@/assets/Maud_HD-21 (1).webp';
 import imgBerenice from '@/assets/IMG_9139_heic.webp';
 import imgHelena from '@/assets/Helena R.webp';
 import imgLeonore from '@/assets/WhatsApp Image 2025-03-11 at 20_43_29.webp';
-import imgAlexandra from '@/assets/portrait retouché.webp';
+import imgAlexandra from '@/assets/portrait_retouche.webp';
 import imgCharlotte from '@/assets/charlotte_brunel_.webp';
 import imgClaire from '@/assets/Claire.webp';
 import imgMorgane from '@/assets/Morgane P.webp';
