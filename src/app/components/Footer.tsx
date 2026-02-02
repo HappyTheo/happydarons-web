@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -36,11 +37,11 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6 text-sm lg:text-base text-black text-center">
-            <a href="#" className="hover:text-[#ffa6bf] transition-colors">Mentions légales</a>
+            <Link to="/mentions-legales" className="hover:text-[#ffa6bf] transition-colors">Mentions légales</Link>
             <span className="hidden sm:inline">|</span>
-            <a href="#" className="hover:text-[#ffa6bf] transition-colors">Politique de confidentialité</a>
+            <Link to="/politique-confidentialite" className="hover:text-[#ffa6bf] transition-colors">Politique de confidentialité</Link>
             <span className="hidden sm:inline">|</span>
-            <a href="#" className="hover:text-[#ffa6bf] transition-colors">Conditions d'utilisation</a>
+            <Link to="/cgu" className="hover:text-[#ffa6bf] transition-colors">Conditions d'utilisation</Link>
           </div>
 
           {/* Copyright */}
