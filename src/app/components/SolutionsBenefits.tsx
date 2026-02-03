@@ -53,7 +53,7 @@ export function SolutionsBenefits() {
     ];
 
     return (
-        <section className="pt-0 pb-20 lg:pb-32 bg-white overflow-hidden">
+        <section className="pt-10 pb-20 lg:pb-32 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-20 lg:space-y-32">
 
                 {/* Section 1: Salariés-Parents */}

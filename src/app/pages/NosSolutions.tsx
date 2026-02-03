@@ -16,8 +16,23 @@ export function NosSolutions() {
                 <SolutionsHero />
                 <SolutionsWhyUs />
                 <SolutionsFeatures />
+
+                <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+                    <div className="w-full h-px bg-gray-200"></div>
+                </div>
+
                 <SolutionsCatalogue />
+
+                <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+                    <div className="w-full h-px bg-gray-200"></div>
+                </div>
+
                 <SolutionsBenefits />
+
+                <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+                    <div className="w-full h-px bg-gray-200"></div>
+                </div>
+
                 <SolutionsStats />
             </main>
             <Footer />

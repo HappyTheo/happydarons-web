@@ -288,7 +288,7 @@ export function SolutionsCatalogue() {
                 </div>
 
                 {/* Stacking Cards Container */}
-                <div className="relative pb-20">
+                <div className="relative pb-10">
 
                     {/* Card 1: Ateliers & Conférences */}
                     <div
