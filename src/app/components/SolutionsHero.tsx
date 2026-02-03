@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PopupModal } from "react-calendly";
-import heroImage from '@/assets/template2 1.webp';
+import heroImage from '@/assets/Bannière site home page.webp';
 
 export function SolutionsHero() {
     const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
@@ -109,11 +109,6 @@ export function SolutionsHero() {
                     {/* Right side - Image */}
                     <div className="lg:w-1/2 mt-12 lg:mt-0">
                         <div className="relative">
-                            {/* Decorative background shape */}
-                            <div
-                                className="absolute -inset-4 rounded-[32px] opacity-20"
-                                style={{ backgroundColor: '#267B56' }}
-                            />
                             {/* Main image */}
                             <img
                                 src={heroImage}
