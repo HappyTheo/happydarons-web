@@ -8,7 +8,7 @@ export function SolutionsWhyUs() {
         {
             icon: ShoppingBag,
             title: "Marketplace complète",
-            text: "Tous les services — 1 interlocuteur unique.",
+            text: "Tous les services : 1 interlocuteur unique.",
             color: "bg-[#FFA6BF]"
         },
         {
