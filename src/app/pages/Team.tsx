@@ -2,8 +2,8 @@ import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Users, Heart, Star, Briefcase, Smile, Award } from 'lucide-react';
-import teamHeroImg from '@/assets/AV1 Image File Format.webp';
-import storyImg from '@/assets/story_illustration.png'; // Will use generated image or placeholder
+import teamHeroImg from '@/assets/JPEG image.webp';
+import storyImg from '@/assets/JPEG image(1).webp';
 import imgAaricia from '@/assets/Aaricia Lejour.webp';
 import imgValentine from '@/assets/Valentine - Clothilde Valade (c)-2.webp';
 import imgMaud from '@/assets/Maud_HD-21 (1).webp';
@@ -57,7 +57,7 @@ const founders = [
             "Tess cumule plus de 5 ans d’expérience en tant que cheffe de projet, dont plus de 3 ans au cœur de VivaTech.",
             "Elle allie une véritable sensibilité humaine à une vision business solide, avec un objectif clair : mettre l’innovation au service du bien-être et de l’impact social.",
             "Son moteur ? Créer du lien, mobiliser les bonnes personnes, et faire avancer les projets qui comptent.",
-            "Tess, c’est l’énergie incarnée — toujours en mouvement, toujours positive.",
+            "Tess, c’est l’énergie incarnée, toujours en mouvement, toujours positive.",
             "Passionnée de kitesurf, de course à pied, danse et d’aventures collectives."
         ],
         image: imgTess
@@ -89,7 +89,7 @@ export function Team() {
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                         <div className="lg:w-1/2 text-center lg:text-left">
                             <span className="inline-block py-1 px-3 rounded-full bg-[#FFA6BF]/20 text-[#FFA6BF] text-sm font-semibold mb-6">
-                                DERRIÈRE HAPPYDARONS ⌵
+                                DERRIÈRE HAPPYDARONS
                             </span>
                             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                                 Qui sommes-<span className="text-[#FFA6BF]">nous?</span>
@@ -128,7 +128,7 @@ export function Team() {
                                 Nous connaître 💛
                             </h2>
                             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                                Nous avons imaginé HappyDarons comme une solution clé-en-main pour les entreprises et leurs salarié·es parents.
+                                Nous avons imaginé HappyDarons comme une solution clé-en-main pour les entreprises et leurs salarié.es parents.
                             </p>
                             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                                 Trop souvent, les parents doivent choisir entre leur carrière et leur vie de famille.
@@ -202,7 +202,7 @@ export function Team() {
                             </div>
                             <h2 className="text-3xl lg:text-4xl font-bold mb-6">Notre Mission</h2>
                             <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed">
-                                Aider les entreprises à améliorer le bien-être de leurs salarié·e·s parents, et en faire un levier d’épanouissement et d’engagement durable.
+                                Aider les entreprises à améliorer le bien-être de leurs salarié.e.s parents, et en faire un levier d’épanouissement et d’engagement durable.
                             </p>
                         </div>
                         <div>
@@ -225,7 +225,7 @@ export function Team() {
                     <h2 className="text-3xl lg:text-5xl font-bold text-[#1F3C32] text-center mb-16">
                         Notre équipe <span className="text-[#FFA6BF]">d'expert.e.s</span>
                         <p className="text-lg text-gray-600 font-normal mt-4 max-w-2xl mx-auto">
-                            Une équipe d’expert·e·s passionné·e·s pour aider chaque salarié·e parent avec des solutions sur-mesure, humaines et profondément bienveillantes.
+                            Une équipe d’expert.e.s passionné.e.s pour aider chaque salarié.e parent avec des solutions sur-mesure, humaines et profondément bienveillantes.
                         </p>
                     </h2>
 
@@ -255,14 +255,14 @@ export function Team() {
                                 <img src={imgTess} alt="Tess Cevaer" className="w-full h-full object-cover" />
                             </div>
                             <p className="font-bold text-white text-lg lg:text-3xl mb-2">Tess Cevaer</p>
-                            <p className="text-sm lg:text-xl text-[#FFA6BF]">Co-fondatrice</p>
+                            <p className="text-sm lg:text-xl text-[#FFA6BF]">CEO</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-[#FFA6BF] mb-6 lg:mb-8 overflow-hidden border-4 border-white shadow-lg">
                                 <img src={imgLaureen} alt="Laureen Cevaer" className="w-full h-full object-cover" />
                             </div>
                             <p className="font-bold text-white text-lg lg:text-3xl mb-2">Laureen Cevaer</p>
-                            <p className="text-sm lg:text-xl text-[#FFA6BF]">Co-fondatrice</p>
+                            <p className="text-sm lg:text-xl text-[#FFA6BF]">CMO</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-[#267B56] mb-6 lg:mb-8 overflow-hidden border-4 border-white shadow-lg">
