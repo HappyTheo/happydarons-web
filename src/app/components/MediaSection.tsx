@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import imgMedia1 from "@/assets/e12a97d8767dbbbcbea7c9b9f5b3461c84d7ffdc.webp";
+import imgMedia1 from "@/assets/9efc920c42477400b0616e6072efe0ebf2f34d96.webp";
 import imgMedia2 from "@/assets/0677cfaba7a6985a87d2c604e633d84514b29183.webp";
 import imgMedia3 from "@/assets/cf3bed17333e2d556c05fa1ebd739ce008a92543.webp";
 import imgMedia4 from "@/assets/b43351f51581ad734046b9a55ef4c1d7945c0170.webp";
