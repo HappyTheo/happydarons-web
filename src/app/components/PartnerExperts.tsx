@@ -1,9 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { Stethoscope, HeartHandshake, BrainCircuit, Flower2, Mic2, Users2, Activity, Sparkles, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { PopupModal } from "react-calendly";
 
 export function PartnerExperts() {
+    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
     const expertises = [
         { icon: Flower2, name: "Doulas & Sages-femmes" },
         { icon: HeartHandshake, name: "Consultant.e Lactation" },
@@ -108,13 +112,24 @@ export function PartnerExperts() {
                                 <p className="text-white/80">Gagnez en notoriété via notre application et auprès de nos entreprises clientes.</p>
                             </div>
                         </div>
-                        <button className="bg-[#FFD200] text-[#1F3C32] text-xl font-bold py-4 px-10 rounded-2xl hover:bg-white hover:scale-105 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+                        <button
+                            onClick={() => setIsCalendlyOpen(true)}
+                            className="bg-[#FFD200] text-[#1F3C32] text-xl font-bold py-4 px-10 rounded-2xl hover:bg-white hover:scale-105 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                        >
                             Rejoindre HappyDarons
                         </button>
                     </div>
                 </div>
 
             </div>
+
+            {/* Calendly Modal */}
+            <PopupModal
+                url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+                onModalClose={() => setIsCalendlyOpen(false)}
+                open={isCalendlyOpen}
+                rootElement={document.body}
+            />
         </section>
     );
 }

@@ -1,9 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { Baby, GraduationCap, Sparkles, Utensils, PartyPopper, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { PopupModal } from "react-calendly";
 
 export function PartnerServices() {
+    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
     const services = [
         {
             icon: Baby,
@@ -89,11 +93,22 @@ export function PartnerServices() {
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#267B56] rounded-full blur-[40px] opacity-50 -translate-y-1/2 translate-x-1/2"></div>
                         <h3 className="text-2xl font-bold mb-4 relative z-10">Vous proposez un autre service ?</h3>
-                        <button className="bg-[#FFA6BF] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#ff9eb6] transition-colors relative z-10 flex items-center gap-2">
+                        <button
+                            onClick={() => setIsCalendlyOpen(true)}
+                            className="bg-[#FFA6BF] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#ff9eb6] transition-colors relative z-10 flex items-center gap-2"
+                        >
                             Contactez-nous <ArrowRight size={18} />
                         </button>
                     </motion.div>
                 </div>
+
+                {/* Calendly Modal */}
+                <PopupModal
+                    url="https://calendly.com/tess-cevaer-happydarons/happydarons-rendez-vous-clone"
+                    onModalClose={() => setIsCalendlyOpen(false)}
+                    open={isCalendlyOpen}
+                    rootElement={document.body}
+                />
 
                 {/* Benefits & How it works */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
