@@ -1,6 +1,6 @@
 import imgStat1 from "@/assets/72b7dddaa744944635f5576ce7978d57d9c26b9b.webp";
 import imgStat2 from "@/assets/89f67d87f20fb0ca0f1bb876745537a1c6f2ed29.webp";
-import imgStat3 from "@/assets/e7735b3aedbf5169bf49e748550486f14119364f.webp";
+import imgStat3 from "@/assets/papa fils.png";
 import imgStat4 from "@/assets/a64e74d3f1ace1918bec136b5fb6a805b33dfde4.webp";
 import imgStat5 from "@/assets/4499a7c1968115278ed08cd022561c52eb95d692.webp";
 
