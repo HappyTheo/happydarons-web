@@ -201,7 +201,7 @@ export function SolutionsFeatures() {
                                                         ))}
                                                     </ul>
                                                     <div className="text-base font-bold text-[#267B56] bg-[#fae6e9] p-3 rounded-xl inline-block">
-                                                        ✨ {feature.benefit}
+                                                        {feature.benefit}
                                                     </div>
                                                 </motion.div>
                                             )}
