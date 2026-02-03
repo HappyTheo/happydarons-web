@@ -53,22 +53,22 @@ export function SolutionsBenefits() {
     ];
 
     return (
-        <section className="pt-10 pb-20 lg:pb-32 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-20 lg:space-y-32">
+        <section className="pt-20 pb-28 lg:pb-40 bg-[#1F3C32] overflow-hidden -mt-1">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 space-y-24 lg:space-y-40">
 
                 {/* Section 1: Salariés-Parents */}
                 <div>
-                    <div className="text-center mb-12 lg:mb-16">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#fae6e9] text-[#267B56] font-bold text-sm tracking-wide mb-4 uppercase">
+                    <div className="text-center mb-16 lg:mb-20">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#fae6e9]/10 text-[#FFA6BF] border border-[#FFA6BF]/30 font-bold text-sm tracking-wide mb-6 uppercase">
                             Avantages pour vos équipes
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-4">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                             Les avantages pour vos <br className="hidden md:block" />
                             <span className="text-[#FFA6BF]">salarié.e.s-parents</span>
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
                         {teamBenefits.map((item, index) => (
                             <motion.div
                                 key={index}
@@ -76,12 +76,12 @@ export function SolutionsBenefits() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-white rounded-3xl p-8 border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 flex flex-col items-center text-center h-full"
+                                className="bg-white rounded-[2rem] p-8 lg:p-10 border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 flex flex-col items-center text-center h-full"
                             >
-                                <div className={`w-20 h-20 rounded-2xl ${item.color} border-2 border-black flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                                <div className={`w-20 h-20 rounded-2xl ${item.color} border-2 border-black flex items-center justify-center mb-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                                     <item.icon size={40} className="text-[#1F3C32]" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#1F3C32] mb-4">{item.title}</h3>
+                                <h3 className="text-xl lg:text-2xl font-bold text-[#1F3C32] mb-4 leading-tight">{item.title}</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">
                                     {item.text}
                                 </p>
@@ -92,11 +92,11 @@ export function SolutionsBenefits() {
 
                 {/* Section 2: Organisation */}
                 <div>
-                    <div className="text-center mb-12 lg:mb-16">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#e0f2fe] text-[#0c4a6e] font-bold text-sm tracking-wide mb-4 uppercase">
+                    <div className="text-center mb-16 lg:mb-20">
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#e0f2fe]/10 text-[#7DD3FC] border border-[#7DD3FC]/30 font-bold text-sm tracking-wide mb-6 uppercase">
                             Bénéfices pour l&apos;entreprise
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-4">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                             Les bénéfices pour votre <br className="hidden md:block" />
                             <span className="text-[#267B56]">organisation</span>
                         </h2>
@@ -110,12 +110,12 @@ export function SolutionsBenefits() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-white rounded-3xl p-8 border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 flex flex-col items-center text-center h-full"
+                                className="bg-white rounded-[2rem] p-8 border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 flex flex-col items-center text-center h-full"
                             >
-                                <div className={`w-20 h-20 rounded-2xl ${item.color} border-2 border-black flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                                <div className={`w-20 h-20 rounded-2xl ${item.color} border-2 border-black flex items-center justify-center mb-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                                     <item.icon size={40} className={item.color === 'bg-[#1F3C32]' ? 'text-white' : 'text-[#1F3C32]'} />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#1F3C32] mb-4">{item.title}</h3>
+                                <h3 className="text-xl font-bold text-[#1F3C32] mb-4 leading-tight">{item.title}</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">
                                     {item.text}
                                 </p>
