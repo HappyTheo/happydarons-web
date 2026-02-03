@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GraduationCap, Users, Briefcase, Sparkles, Send, Phone, Mail, User, Building, Check, X, Clock, Target, Heart, Brain, Baby, MessageCircle, Moon, Scale, Stethoscope } from 'lucide-react';
+import { GraduationCap, Users, Briefcase, Sparkles, Send, Mail, User, Building, Check, X, Clock, Target, Heart, Brain, Baby, MessageCircle, Moon, Scale, Stethoscope, Download, Calendar, FileText } from 'lucide-react';
 
 // Enhanced data for workshops with images and details
 const ateliersEssentiels = [
@@ -157,9 +157,9 @@ export function SolutionsCatalogue() {
         nom: '',
         prenom: '',
         fonction: '',
-        email: '',
-        telephone: ''
+        email: ''
     });
+    const [wantsCalendar, setWantsCalendar] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -205,14 +205,54 @@ export function SolutionsCatalogue() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Call Notion API to save lead (skip on localhost to avoid 404)
+        const isProduction = !window.location.hostname.includes('localhost');
+        if (isProduction) {
+            try {
+                await fetch('/api/notion-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ...formData,
+                        wantsCalendar
+                    })
+                });
+            } catch (error) {
+                console.error('Error saving lead:', error);
+                // Continue with download even if Notion fails
+            }
+        }
+
+        // Trigger PDF downloads
+        const catalogueLink = document.createElement('a');
+        catalogueLink.href = '/documents/HappyDarons - Catalogue.pdf';
+        catalogueLink.download = 'HappyDarons-Catalogue.pdf';
+        document.body.appendChild(catalogueLink);
+        catalogueLink.click();
+        document.body.removeChild(catalogueLink);
+
+        // Download calendar if requested
+        if (wantsCalendar) {
+            setTimeout(() => {
+                const calendarLink = document.createElement('a');
+                calendarLink.href = '/documents/HappyDarons - Evenements2026.pdf';
+                calendarLink.download = 'HappyDarons-Evenements2026.pdf';
+                document.body.appendChild(calendarLink);
+                calendarLink.click();
+                document.body.removeChild(calendarLink);
+            }, 500);
+        }
+
         setIsSubmitting(false);
         setIsSubmitted(true);
         setTimeout(() => {
             setIsSubmitted(false);
-            setFormData({ nom: '', prenom: '', fonction: '', email: '', telephone: '' });
-        }, 3000);
+            setFormData({ nom: '', prenom: '', fonction: '', email: '' });
+            setWantsCalendar(false);
+        }, 4000);
     };
+
 
     const activeAtelier = ateliersEssentiels.find(a => a.id === selectedAtelier);
     const activeFormation = formationsManagers.find(f => f.id === selectedFormation);
@@ -687,15 +727,15 @@ export function SolutionsCatalogue() {
                                 <div className="flex-1 max-w-lg">
                                     <div className="flex items-center gap-3 mb-6">
                                         <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FFD200] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-                                            <Sparkles size={24} className="text-black" />
+                                            <Download size={24} className="text-black" />
                                         </div>
-                                        <span className="text-xs font-bold text-[#1F3C32]/70 uppercase tracking-wider">Téléchargement</span>
+                                        <span className="text-xs font-bold text-[#1F3C32]/70 uppercase tracking-wider">Téléchargement instantané</span>
                                     </div>
                                     <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-6 leading-tight">
                                         ➡️ Télécharger le catalogue complet
                                     </h3>
                                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                        Recevez instantanément par email notre catalogue détaillé comprenant :
+                                        Téléchargez instantanément notre catalogue détaillé comprenant :
                                     </p>
 
                                     <div className="space-y-4">
@@ -730,11 +770,14 @@ export function SolutionsCatalogue() {
                                                 className="text-center py-12"
                                             >
                                                 <div className="w-20 h-20 bg-[#267B56] rounded-full flex items-center justify-center mx-auto mb-6">
-                                                    <Check size={40} className="text-white" />
+                                                    <Download size={40} className="text-white" />
                                                 </div>
-                                                <h4 className="text-2xl font-bold text-[#1F3C32] mb-2">Merci !</h4>
-                                                <p className="text-gray-600 text-lg">Votre catalogue a été envoyé par email.</p>
-                                                <p className="text-sm text-gray-400 mt-4">Pensez à vérifier vos spams</p>
+                                                <h4 className="text-2xl font-bold text-[#1F3C32] mb-2">Téléchargement lancé ! 🎉</h4>
+                                                <p className="text-gray-600 text-lg">Votre catalogue est en cours de téléchargement.</p>
+                                                {wantsCalendar && (
+                                                    <p className="text-sm text-[#267B56] font-medium mt-2">+ Le calendrier 2026 aussi !</p>
+                                                )}
+                                                <p className="text-sm text-gray-400 mt-4">Vérifiez votre dossier Téléchargements</p>
                                             </motion.div>
                                         ) : (
                                             <>
@@ -802,6 +845,29 @@ export function SolutionsCatalogue() {
                                                     </div>
                                                 </div>
 
+                                                {/* Calendar Checkbox */}
+                                                <div className="mb-5 p-4 bg-gradient-to-r from-[#FFA6BF]/10 to-[#FFD200]/10 rounded-xl border-2 border-dashed border-[#FFA6BF]/50">
+                                                    <label className="flex items-start gap-3 cursor-pointer group">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={wantsCalendar}
+                                                            onChange={(e) => setWantsCalendar(e.target.checked)}
+                                                            className="w-5 h-5 mt-0.5 rounded border-2 border-[#1F3C32] text-[#267B56] focus:ring-[#267B56] accent-[#267B56]"
+                                                        />
+                                                        <div className="flex-1">
+                                                            <div className="flex items-center gap-2">
+                                                                <Calendar size={16} className="text-[#FFA6BF]" />
+                                                                <span className="font-bold text-[#1F3C32] text-sm group-hover:text-[#267B56] transition-colors">
+                                                                    📅 Ajouter le Calendrier 2026
+                                                                </span>
+                                                            </div>
+                                                            <p className="text-xs text-gray-500 mt-1">
+                                                                Les événements clés de la parentalité en entreprise
+                                                            </p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+
                                                 <button
                                                     type="submit"
                                                     disabled={isSubmitting}
@@ -824,8 +890,8 @@ export function SolutionsCatalogue() {
                                                         </>
                                                     ) : (
                                                         <>
-                                                            <Send size={18} />
-                                                            Recevoir le catalogue
+                                                            <Download size={18} />
+                                                            Télécharger le catalogue
                                                         </>
                                                     )}
                                                 </button>
