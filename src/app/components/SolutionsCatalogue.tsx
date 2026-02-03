@@ -724,40 +724,44 @@ export function SolutionsCatalogue() {
                             `}
                         >
                             <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center h-full justify-center">
-                                {/* Left: Text */}
+                                {/* Left: Text - Redesigned for elegance */}
                                 <div className="flex-1 max-w-lg">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FFD200] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-                                            <Download size={24} className="text-black" />
-                                        </div>
-                                        <span className="text-xs font-bold text-[#1F3C32]/70 uppercase tracking-wider">Téléchargement instantané</span>
+                                    {/* Badge */}
+                                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1F3C32] mb-6">
+                                        <Download size={14} className="text-[#FFD200]" />
+                                        <span className="text-xs font-bold text-white uppercase tracking-wider">Téléchargement gratuit</span>
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-6 leading-tight">
-                                        ➡️ Télécharger le catalogue complet
+
+                                    {/* Title */}
+                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F3C32] mb-4 leading-tight">
+                                        Découvrez notre <span className="text-[#267B56]">catalogue complet</span>
                                     </h3>
-                                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                        Téléchargez instantanément notre catalogue détaillé comprenant :
+
+                                    {/* Subtitle */}
+                                    <p className="text-lg text-gray-600 mb-8">
+                                        Tout ce qu'il faut savoir sur nos solutions parentalité en entreprise.
                                     </p>
 
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-3 bg-white/50 p-3 rounded-xl border border-black/5">
-                                            <div className="w-8 h-8 rounded-full bg-[#267B56]/20 flex items-center justify-center shrink-0">
-                                                <Check size={16} className="text-[#267B56]" />
+                                    {/* Feature list - cleaner design */}
+                                    <div className="space-y-3">
+                                        {[
+                                            "Détail des ateliers et conférences",
+                                            "Tarifs et forfaits entreprises",
+                                            "Profils de nos experts"
+                                        ].map((item, idx) => (
+                                            <div key={idx} className="flex items-center gap-3">
+                                                <div className="w-6 h-6 rounded-full bg-[#267B56] flex items-center justify-center shrink-0">
+                                                    <Check size={14} className="text-white" />
+                                                </div>
+                                                <span className="text-gray-700 font-medium">{item}</span>
                                             </div>
-                                            <span className="text-gray-800 font-medium">Le détail de tous nos ateliers et conférences</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 bg-white/50 p-3 rounded-xl border border-black/5">
-                                            <div className="w-8 h-8 rounded-full bg-[#267B56]/20 flex items-center justify-center shrink-0">
-                                                <Check size={16} className="text-[#267B56]" />
-                                            </div>
-                                            <span className="text-gray-800 font-medium">Nos tarifs et forfaits entreprises</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 bg-white/50 p-3 rounded-xl border border-black/5">
-                                            <div className="w-8 h-8 rounded-full bg-[#267B56]/20 flex items-center justify-center shrink-0">
-                                                <Check size={16} className="text-[#267B56]" />
-                                            </div>
-                                            <span className="text-gray-800 font-medium">Les bios de nos experts intervenants</span>
-                                        </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Trust indicator */}
+                                    <div className="mt-8 flex items-center gap-2 text-sm text-gray-500">
+                                        <FileText size={16} className="text-[#FFA6BF]" />
+                                        <span>PDF • Téléchargement immédiat • Sans engagement</span>
                                     </div>
                                 </div>
 
