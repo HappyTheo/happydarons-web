@@ -6,7 +6,7 @@ import imgStat5 from "@/assets/4499a7c1968115278ed08cd022561c52eb95d692.webp";
 
 export function ConstatSection() {
 	return (
-		<section className="relative bg-[#fae6e9] py-16 lg:py-24 overflow-hidden">
+		<section className="relative bg-white py-16 lg:py-24 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="text-center mb-10 lg:mb-16">
@@ -15,11 +15,9 @@ export function ConstatSection() {
 					</div>
 
 					<h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#203b31] leading-tight max-w-4xl mx-auto">
-						En 2026, trop de parents doivent encore choisir entre leur carrière et leur vie de famille.
+						En 2026, trop de parents doivent encore choisir entre leur carrière et leur vie de famille :
 						<br className="hidden sm:block" />
-						<span className="text-[#203b31]/70">
-							La parentalité reste l'un des premiers facteurs de désengagement et de turnover.
-						</span>
+						La parentalité reste l'un des premiers facteurs de désengagement et de turnover.
 					</h2>
 				</div>
 

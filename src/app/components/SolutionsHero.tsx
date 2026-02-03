@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PopupModal } from "react-calendly";
-import heroImage from '@/assets/Bannière site home page.webp';
+import heroImage from '@/assets/Banniere site home page.webp';
 
 export function SolutionsHero() {
     const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);

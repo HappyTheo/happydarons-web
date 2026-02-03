@@ -43,7 +43,7 @@ export function Testimonials() {
 	}, [emblaApi]);
 
 	return (
-		<section className="bg-[#fae6e9] py-16 lg:py-24 overflow-hidden">
+		<section className="bg-white py-16 lg:py-24 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col md:flex-row md:items-end justify-between mb-8 lg:mb-16 gap-6">
 					<div>
