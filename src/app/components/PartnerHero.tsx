@@ -17,7 +17,7 @@ export function PartnerHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-[#FFD200] font-bold text-sm tracking-wide mb-8 uppercase backdrop-blur-sm border border-white/10">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#FFA6BF]/20 text-[#FFA6BF] font-bold text-sm tracking-wide mb-8 uppercase backdrop-blur-sm border border-[#FFA6BF]/30">
                         Rejoignez l'écosystème
                     </div>
 

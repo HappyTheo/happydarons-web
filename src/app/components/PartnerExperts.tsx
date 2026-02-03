@@ -114,7 +114,7 @@ export function PartnerExperts() {
                         </div>
                         <button
                             onClick={() => setIsCalendlyOpen(true)}
-                            className="bg-[#FFD200] text-[#1F3C32] text-xl font-bold py-4 px-10 rounded-2xl hover:bg-white hover:scale-105 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                            className="bg-[#FFA6BF] text-white text-xl font-bold py-4 px-10 rounded-2xl hover:bg-white hover:text-[#1F3C32] hover:scale-105 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
                         >
                             Rejoindre HappyDarons
                         </button>
