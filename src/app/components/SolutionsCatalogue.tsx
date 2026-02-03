@@ -232,16 +232,17 @@ export function SolutionsCatalogue() {
         catalogueLink.click();
         document.body.removeChild(catalogueLink);
 
-        // Download calendar if requested
+        // Download calendar if requested (longer delay to avoid browser blocking)
         if (wantsCalendar) {
             setTimeout(() => {
                 const calendarLink = document.createElement('a');
                 calendarLink.href = '/documents/HappyDarons - Evenements2026.pdf';
                 calendarLink.download = 'HappyDarons-Evenements2026.pdf';
+                calendarLink.target = '_blank';
                 document.body.appendChild(calendarLink);
                 calendarLink.click();
                 document.body.removeChild(calendarLink);
-            }, 500);
+            }, 1000);
         }
 
         setIsSubmitting(false);
