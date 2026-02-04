@@ -1,0 +1,11 @@
+# HappyDarons - Robots.txt
+# https://www.happydarons.fr
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.happydarons.fr/sitemap.xml
+
+# Disallow admin/private paths (if any)
+Disallow: /api/
