@@ -3,8 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import confetti from "canvas-confetti";
 import imgHero from "@/assets/1dbc17ebcbcc9a9e6bd2200ca3c80b6af952eb95.webp";
 import imgHeroBg from "@/assets/40b3b75ab6b28adeae2dec5506df869ea93e0f8d.webp";
-import imgLogo1 from "@/assets/dfeeb57e51fd516a0374fc221864e4890eb4d8f0.webp";
-import imgLogo2 from "@/assets/39a652a1f8d82824c98570dc063a819885b107bc.webp";
+import imgLogo1 from "@/assets/Mask group.webp";
+import imgLogo2 from "@/assets/Mask group-1.webp";
+import imgLogo3 from "@/assets/Mask group-2.webp";
+import imgLogo4 from "@/assets/Mask group-3.webp";
+import imgLogo5 from "@/assets/Mask group-4.webp";
+import imgLogo6 from "@/assets/Mask group-5.webp";
 
 const stats = [
 	{
@@ -51,7 +55,16 @@ const stats = [
 	},
 ];
 
-const logos = [imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2, imgLogo1, imgLogo2];
+const logos = [
+	{ src: imgLogo1, size: 'xl' as const },
+	{ src: imgLogo2, size: 'xl' as const },
+	{ src: imgLogo3, size: 'md' as const },
+	{ src: imgLogo4, size: 'lg' as const },
+	{ src: imgLogo5, size: 'md' as const },
+	{ src: imgLogo6, size: 'lg' as const },
+];
+
+const logoSizeClass = { md: 'h-8 lg:h-12', lg: 'h-12 lg:h-[4.5rem]', xl: 'h-16 lg:h-24' };
 
 function StatCard({ icon, value, label, highlight, source }: { icon?: string; value: string; label: string; highlight: string; source: string }) {
 	const [isFlipped, setIsFlipped] = useState(false);
@@ -221,9 +234,9 @@ export function Hero() {
 							{logos.map((logo, index) => (
 								<div key={`set1-${index}`} className="flex-shrink-0">
 									<img
-										src={logo}
+										src={logo.src}
 										alt="Partner Logo"
-										className="h-8 lg:h-12 w-auto object-contain filter grayscale brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+										className={`${logoSizeClass[logo.size]} w-auto object-contain filter grayscale brightness-0 invert opacity-60 hover:opacity-100 transition-opacity`}
 									/>
 								</div>
 							))}
@@ -233,9 +246,9 @@ export function Hero() {
 							{logos.map((logo, index) => (
 								<div key={`set2-${index}`} className="flex-shrink-0">
 									<img
-										src={logo}
+										src={logo.src}
 										alt="Partner Logo"
-										className="h-8 lg:h-12 w-auto object-contain filter grayscale brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+										className={`${logoSizeClass[logo.size]} w-auto object-contain filter grayscale brightness-0 invert opacity-60 hover:opacity-100 transition-opacity`}
 									/>
 								</div>
 							))}
