@@ -190,3 +190,16 @@
     font-family: 'Radio Canada', sans-serif;
   }
 }
+@theme inline {
+  --color-brand-cream: #fffaf3;
+  --color-brand-green: #267b56;
+  --color-brand-dark-green: #203b31;
+  --color-brand-pink: #fae6e9;
+  --color-brand-pink-light: #fdf0f2;
+  --color-brand-accent: #ffa6bf;
+}
+
+@theme inline {
+  --font-londrina: 'Londrina Solid', cursive;
+  --font-montserrat: 'Montserrat', sans-serif;
+}

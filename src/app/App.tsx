@@ -3,9 +3,11 @@ import { HomePage } from './pages/HomePage';
 import { NosSolutions } from './pages/NosSolutions';
 import { BecomePartner } from './pages/BecomePartner';
 import { Team } from './pages/Team';
-import { MentionsLegales } from './pages/MentionsLegales'; // Import new pages
+import { MentionsLegales } from './pages/MentionsLegales';
 import { PolitiqueConfidentialite } from './pages/PolitiqueConfidentialite';
 import { CGU } from './pages/CGU';
+import { GetTheApp } from './pages/GetTheApp';
+import { Vivatech } from './pages/Vivatech';
 import { ScrollToTopHandler } from './components/ScrollToTopHandler';
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
 				<Route path="/mentions-legales" element={<MentionsLegales />} />
 				<Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
 				<Route path="/cgu" element={<CGU />} />
+				<Route path="/get-the-app" element={<GetTheApp />} />
+				<Route path="/vivatech" element={<Vivatech />} />
 			</Routes>
 		</Router>
 	);
