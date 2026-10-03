@@ -6,6 +6,7 @@ import { Team } from './pages/Team';
 import { MentionsLegales } from './pages/MentionsLegales';
 import { PolitiqueConfidentialite } from './pages/PolitiqueConfidentialite';
 import { CGU } from './pages/CGU';
+import { SuppressionCompte } from './pages/SuppressionCompte';
 import { GetTheApp } from './pages/GetTheApp';
 import { ScrollToTopHandler } from './components/ScrollToTopHandler';
 
@@ -21,6 +22,7 @@ export default function App() {
 				<Route path="/mentions-legales" element={<MentionsLegales />} />
 				<Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
 				<Route path="/cgu" element={<CGU />} />
+				<Route path="/suppression-compte" element={<SuppressionCompte />} />
 				<Route path="/get-the-app" element={<GetTheApp />} />
 				<Route path="/vivatech" element={<Navigate to="/" replace />} />
 			</Routes>
